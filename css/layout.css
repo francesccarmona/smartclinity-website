@@ -1,0 +1,155 @@
+/* ============================================================
+   SmartClinity — Layout
+   ============================================================ */
+
+/* ── Container ── */
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--container-pad);
+}
+
+/* ── Section ── */
+.section {
+  padding-block: var(--section-py);
+}
+
+.section--dark {
+  background-color: var(--grey-900);
+  color: var(--white);
+}
+.section--dark h1,
+.section--dark h2,
+.section--dark h3,
+.section--dark h4 {
+  color: var(--white);
+}
+.section--dark p {
+  color: rgba(255,255,255,0.6);
+}
+
+.section--grey {
+  background-color: var(--grey-50);
+}
+
+/* ── Section Header ── */
+.section-label {
+  display: inline-block;
+  font-size: var(--fs-label);
+  font-weight: var(--fw-semibold);
+  letter-spacing: var(--ls-wider);
+  text-transform: uppercase;
+  color: var(--grey-300);
+  margin-bottom: var(--space-16);
+}
+.section--dark .section-label {
+  color: rgba(255,255,255,0.35);
+}
+
+.section-header {
+  margin-bottom: var(--space-64);
+}
+
+.section-header--center {
+  text-align: center;
+  max-width: 720px;
+  margin-inline: auto;
+  margin-bottom: var(--space-64);
+}
+
+.section-header .lead {
+  margin-top: var(--space-20);
+  font-size: var(--fs-body-lg);
+  max-width: 52ch;
+}
+
+.section-header--center .lead {
+  margin-inline: auto;
+}
+
+/* ── Grid Layouts ── */
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--grid-gap);
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--grid-gap);
+}
+
+.grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--grid-gap);
+}
+
+.grid-5 {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: var(--grid-gap);
+}
+
+/* ── Split Layout ── */
+.split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(3rem, 6vw, 6rem);
+  align-items: center;
+}
+
+.split--60-40 {
+  grid-template-columns: 3fr 2fr;
+}
+
+.split--40-60 {
+  grid-template-columns: 2fr 3fr;
+}
+
+/* ── Divider ── */
+.divider {
+  border: none;
+  border-top: var(--border-thin);
+  margin-block: var(--space-40);
+}
+
+/* ── Flex Utilities ── */
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* ── Responsive ── */
+@media (max-width: 1024px) {
+  .grid-4 { grid-template-columns: repeat(2, 1fr); }
+  .grid-5 { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 768px) {
+  .grid-2,
+  .grid-3,
+  .grid-4,
+  .split,
+  .split--60-40,
+  .split--40-60 {
+    grid-template-columns: 1fr;
+  }
+  .grid-5 { grid-template-columns: repeat(2, 1fr); }
+
+  .split > *:first-child { order: 1; }
+  .split > *:last-child  { order: 2; }
+}
+
+@media (max-width: 480px) {
+  .grid-5 { grid-template-columns: 1fr; }
+}

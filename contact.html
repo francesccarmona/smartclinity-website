@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — SmartClinity</title>
+  <meta name="description" content="Get in touch with SmartClinity — for hospital partnerships, investor conversations, clinical pilots, and media enquiries." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/tokens.css" />
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <style>
+    /* Contact hero — generous, minimal */
+    .contact-hero {
+      min-height: 45vh;
+      display: flex;
+      align-items: flex-end;
+      padding-top: calc(var(--nav-height) + var(--space-64));
+      padding-bottom: var(--space-80);
+      border-bottom: var(--border-thin);
+    }
+
+    /* Interest pills */
+    .interest-options {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-8);
+      margin-bottom: var(--space-32);
+    }
+
+    .interest-btn {
+      padding: 8px 18px;
+      border: var(--border-thin);
+      border-radius: var(--radius-full);
+      font-size: 12px;
+      font-weight: var(--fw-semibold);
+      letter-spacing: var(--ls-wide);
+      text-transform: uppercase;
+      color: var(--grey-500);
+      background: var(--white);
+      cursor: pointer;
+      transition: all var(--transition-base);
+      user-select: none;
+    }
+
+    .interest-btn:hover,
+    .interest-btn.selected {
+      border-color: var(--grey-900);
+      color: var(--grey-900);
+      background: var(--grey-900);
+      color: var(--white);
+    }
+
+    /* Contact info */
+    .contact-info {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-32);
+    }
+
+    .contact-detail {
+      border-top: var(--border-thin);
+      padding-top: var(--space-24);
+    }
+
+    .contact-detail__label {
+      font-size: var(--fs-label);
+      font-weight: var(--fw-semibold);
+      text-transform: uppercase;
+      letter-spacing: var(--ls-wider);
+      color: var(--grey-300);
+      margin-bottom: var(--space-8);
+    }
+
+    .contact-detail__value {
+      font-size: var(--fs-body);
+      color: var(--grey-700);
+      font-weight: var(--fw-medium);
+    }
+
+    .contact-detail__value a {
+      color: var(--grey-900);
+      transition: color var(--transition-base);
+    }
+    .contact-detail__value a:hover { color: #5a8a20; }
+
+    /* Form success */
+    .form-success {
+      display: none;
+      text-align: center;
+      padding: var(--space-64) var(--space-40);
+    }
+
+    .form-success__icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: rgba(137, 217, 87, 0.1);
+      border: 1px solid rgba(137, 217, 87, 0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto var(--space-24);
+    }
+
+    .form-success__title {
+      font-size: var(--fs-h3);
+      font-weight: var(--fw-bold);
+      color: var(--grey-900);
+      margin-bottom: var(--space-8);
+    }
+
+    .form-success__sub {
+      font-size: var(--fs-body);
+      color: var(--grey-500);
+    }
+
+    /* Bottom motif */
+    .contact-motif {
+      border-top: var(--border-thin);
+      padding-block: var(--space-80);
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" id="main-nav">
+  <div class="container">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo"><img src="SímbolSmartClinity.png" alt="SmartClinity" /></a>
+      <div class="nav__links">
+        <a href="technology.html" class="nav__link">Technology</a>
+        <a href="applications.html" class="nav__link">Applications</a>
+        <a href="platform.html" class="nav__link">Platform</a>
+        <a href="about.html" class="nav__link">About</a>
+        <a href="contact.html" class="nav__link active">Contact</a>
+      </div>
+      <div class="nav__cta"><a href="contact.html" class="btn btn--primary">Request a Demo</a></div>
+      <button class="nav__hamburger" id="hamburger"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+<div class="nav__mobile" id="mobile-menu">
+  <a href="technology.html" class="nav__link">Technology</a>
+  <a href="applications.html" class="nav__link">Applications</a>
+  <a href="platform.html" class="nav__link">Platform</a>
+  <a href="about.html" class="nav__link">About</a>
+  <a href="contact.html" class="nav__link">Contact</a>
+  <a href="contact.html" class="btn btn--primary">Request a Demo</a>
+</div>
+
+<!-- HERO -->
+<section class="contact-hero">
+  <div class="container">
+    <span class="section-label reveal">Contact</span>
+    <h1 style="font-size:clamp(2.5rem, 5vw, 4.5rem); font-weight:var(--fw-extrabold); letter-spacing:var(--ls-tight); color:var(--grey-900); line-height:1.1; max-width:22ch; margin-top:var(--space-16);" class="reveal reveal-delay-1">
+      We are open to partnerships, pilot conversations, and investment discussions.
+    </h1>
+  </div>
+</section>
+
+<!-- MAIN CONTACT SECTION -->
+<section class="section" id="contact-form">
+  <div class="container">
+    <div class="split split--60-40" style="align-items: flex-start; gap: clamp(3rem, 6vw, 7rem);">
+
+      <!-- Form -->
+      <div>
+        <p style="font-size:var(--fs-body-lg); color:var(--grey-500); line-height:var(--lh-relaxed); margin-bottom:var(--space-48);" class="reveal">
+          Whether you represent a clinical institution considering a pilot, an investor exploring the medtech space, or a technical partner with complementary capabilities — we would like to hear from you.
+        </p>
+
+        <!-- Interest selector -->
+        <div style="margin-bottom:var(--space-32);" class="reveal reveal-delay-1">
+          <div class="form-label" style="margin-bottom:var(--space-12);">I am reaching out as a</div>
+          <div class="interest-options">
+            <button class="interest-btn selected" type="button" data-interest="Hospital / Clinical Institution" onclick="selectInterest(this)">Hospital / Clinical Institution</button>
+            <button class="interest-btn" type="button" data-interest="Investor" onclick="selectInterest(this)">Investor</button>
+            <button class="interest-btn" type="button" data-interest="Technical Partner" onclick="selectInterest(this)">Technical Partner</button>
+            <button class="interest-btn" type="button" data-interest="Media / Press" onclick="selectInterest(this)">Media / Press</button>
+            <button class="interest-btn" type="button" data-interest="Other" onclick="selectInterest(this)">Other</button>
+          </div>
+        </div>
+
+        <div id="contact-form-element" class="reveal reveal-delay-2">
+          <div class="form-grid">
+            <div class="form-group">
+              <label class="form-label" for="contact-name">Full Name</label>
+              <input type="text" id="contact-name" class="form-input" placeholder="Your full name" autocomplete="name" />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="contact-org">Organisation</label>
+              <input type="text" id="contact-org" class="form-input" placeholder="Institution or company" autocomplete="organization" />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="contact-email">Email Address</label>
+            <input type="email" id="contact-email" class="form-input" placeholder="your@email.com" autocomplete="email" />
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="contact-message">Message</label>
+            <textarea id="contact-message" class="form-textarea" placeholder="Tell us about your context, interest, or question — we read every message personally."></textarea>
+          </div>
+
+          <input type="hidden" id="interest-hidden" value="Hospital / Clinical Institution" />
+
+          <button type="button" class="btn btn--primary" onclick="submitForm()" id="submit-btn" style="margin-top:var(--space-8);">
+            Send Message <span class="btn__arrow">→</span>
+          </button>
+        </div>
+
+        <!-- Success state -->
+        <div class="form-success" id="form-success">
+          <div class="form-success__icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="rgba(137,217,87,0.8)" stroke-width="2">
+              <polyline points="20 6 9 17 4 12"/>
+            </svg>
+          </div>
+          <div class="form-success__title">Message received.</div>
+          <p class="form-success__sub">We will be in touch shortly. Thank you for reaching out to SmartClinity.</p>
+        </div>
+      </div>
+
+      <!-- Contact info -->
+      <div class="reveal reveal-delay-2">
+        <div class="contact-info">
+          <div class="contact-detail">
+            <div class="contact-detail__label">Direct Contact</div>
+            <div class="contact-detail__value">
+              <a href="mailto:francesc.carmona@outlook.com">francesc.carmona@outlook.com</a>
+            </div>
+          </div>
+
+          <div class="contact-detail">
+            <div class="contact-detail__label">For Investors</div>
+            <div class="contact-detail__value" style="color:var(--grey-500); font-size:var(--fs-small); line-height:var(--lh-relaxed);">
+              SmartClinity is currently in development stage. We welcome conversations with investors aligned with medtech, IoT, and clinical infrastructure opportunities.
+            </div>
+          </div>
+
+          <div class="contact-detail">
+            <div class="contact-detail__label">For Clinical Institutions</div>
+            <div class="contact-detail__value" style="color:var(--grey-500); font-size:var(--fs-small); line-height:var(--lh-relaxed);">
+              We are open to discussing pilot collaborations with clinical institutions interested in advancing fluid monitoring capabilities within their facilities.
+            </div>
+          </div>
+
+          <div class="contact-detail">
+            <div class="contact-detail__label">Location</div>
+            <div class="contact-detail__value">Spain · Europe</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- BOTTOM MOTIF -->
+<div class="contact-motif">
+  <div class="container">
+    <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:var(--space-24);">
+      <div>
+        <img src="LogoSmartClinity.png" alt="SmartClinity" style="height:28px; width:auto; opacity:0.4;" />
+      </div>
+      <div style="text-align:right;">
+        <div style="font-size:var(--fs-label); font-weight:var(--fw-semibold); text-transform:uppercase; letter-spacing:var(--ls-wider); color:var(--grey-200); margin-bottom:var(--space-8);">Connected intelligence for clinical fluid monitoring</div>
+        <div style="display:flex; gap:var(--space-24); justify-content:flex-end; flex-wrap:wrap;">
+          <a href="technology.html" class="footer__link" style="font-size:12px; color:var(--grey-300);">Technology</a>
+          <a href="applications.html" class="footer__link" style="font-size:12px; color:var(--grey-300);">Applications</a>
+          <a href="platform.html" class="footer__link" style="font-size:12px; color:var(--grey-300);">Platform</a>
+          <a href="about.html" class="footer__link" style="font-size:12px; color:var(--grey-300);">About</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__bottom" style="border-top: none; padding-top: 0;">
+      <span class="footer__copy">© 2025 SmartClinity. All rights reserved.</span>
+      <span class="footer__copy">Medtech · IoT · Clinical Intelligence</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/nav.js"></script>
+<script src="js/scroll-reveal.js"></script>
+<script>
+  function selectInterest(btn) {
+    document.querySelectorAll('.interest-btn').forEach(b => b.classList.remove('selected'));
+    btn.classList.add('selected');
+    document.getElementById('interest-hidden').value = btn.dataset.interest;
+  }
+
+  function submitForm() {
+    const name    = document.getElementById('contact-name').value.trim();
+    const org     = document.getElementById('contact-org').value.trim();
+    const email   = document.getElementById('contact-email').value.trim();
+    const message = document.getElementById('contact-message').value.trim();
+    const interest = document.getElementById('interest-hidden').value;
+
+    // Validate required fields
+    if (!name || !email || !message) {
+      const firstEmpty = !name ? 'contact-name' : !email ? 'contact-email' : 'contact-message';
+      const el = document.getElementById(firstEmpty);
+      el.focus();
+      el.style.borderColor = 'rgba(255,80,80,0.4)';
+      el.style.boxShadow = '0 0 0 3px rgba(255,80,80,0.1)';
+      setTimeout(() => {
+        el.style.borderColor = '';
+        el.style.boxShadow = '';
+      }, 2500);
+      return;
+    }
+
+    // Build mailto with all form data pre-filled
+    const subject = `SmartClinity — ${interest}: ${name}`;
+    const body = [
+      `From: ${name}` + (org ? ` (${org})` : ''),
+      `Reply-to: ${email}`,
+      `Interest: ${interest}`,
+      '',
+      '---',
+      '',
+      message
+    ].join('\n');
+
+    const mailtoUrl = `mailto:francesc.carmona@outlook.com`
+      + `?subject=${encodeURIComponent(subject)}`
+      + `&body=${encodeURIComponent(body)}`;
+
+    // Open email client
+    window.location.href = mailtoUrl;
+
+    // Show success confirmation after a brief delay
+    const formEl    = document.getElementById('contact-form-element');
+    const successEl = document.getElementById('form-success');
+
+    formEl.style.opacity   = '0';
+    formEl.style.transform = 'translateY(8px)';
+    formEl.style.transition = 'opacity 300ms, transform 300ms';
+
+    setTimeout(() => {
+      formEl.style.display   = 'none';
+      successEl.style.display = 'block';
+      successEl.style.opacity = '0';
+      successEl.style.transition = 'opacity 500ms';
+      successEl.offsetHeight; // force reflow
+      successEl.style.opacity = '1';
+    }, 400);
+  }
+</script>
+</body>
+</html>

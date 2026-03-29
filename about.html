@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About — SmartClinity</title>
+  <meta name="description" content="Meet the multidisciplinary team behind SmartClinity — engineers, clinical thinkers, and business builders working at the intersection of medtech and intelligent systems." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/tokens.css" />
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <style>
+    /* Editorial hero */
+    .about-hero {
+      padding-top: calc(var(--nav-height) + var(--space-96));
+      padding-bottom: var(--space-96);
+      border-bottom: var(--border-thin);
+    }
+
+    .about-hero__overline {
+      display: flex;
+      align-items: center;
+      gap: var(--space-16);
+      margin-bottom: var(--space-32);
+    }
+
+    .about-hero__line {
+      width: 40px;
+      height: 1px;
+      background: var(--grey-200);
+    }
+
+    .about-hero__quote {
+      font-size: clamp(1.6rem, 3.5vw, 2.8rem);
+      font-weight: var(--fw-extrabold);
+      letter-spacing: var(--ls-tight);
+      line-height: 1.2;
+      color: var(--grey-900);
+      max-width: 22ch;
+    }
+
+    /* Values grid */
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--grey-100);
+      border: var(--border-thin);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+    }
+
+    .value-cell {
+      background: var(--white);
+      padding: var(--space-40) var(--space-32);
+    }
+
+    .value-cell__num {
+      font-size: var(--fs-label);
+      font-weight: var(--fw-bold);
+      color: var(--grey-200);
+      letter-spacing: var(--ls-wider);
+      margin-bottom: var(--space-12);
+    }
+
+    .value-cell__title {
+      font-size: 1rem;
+      font-weight: var(--fw-semibold);
+      color: var(--grey-900);
+      margin-bottom: var(--space-8);
+    }
+
+    .value-cell__desc {
+      font-size: var(--fs-small);
+      color: var(--grey-500);
+      line-height: var(--lh-relaxed);
+    }
+
+    @media (max-width: 768px) {
+      .values-grid { grid-template-columns: 1fr; }
+    }
+
+    /* Team */
+    .team-section {
+      padding-block: var(--space-120);
+      background: var(--grey-50);
+      border-top: var(--border-thin);
+      border-bottom: var(--border-thin);
+    }
+
+    .team-outer-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-40);
+      justify-content: center;
+      margin-top: var(--space-64);
+    }
+
+    .member-card {
+      width: 200px;
+      text-align: center;
+    }
+
+    .member-avatar {
+      width: 128px;
+      height: 128px;
+      border-radius: 50%;
+      background: var(--white);
+      border: 1px solid var(--grey-100);
+      margin: 0 auto var(--space-20);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      transition: border-color var(--transition-slow), box-shadow var(--transition-slow);
+    }
+
+    .member-card:hover .member-avatar {
+      border-color: rgba(137,217,87,0.4);
+      box-shadow: 0 0 0 3px rgba(137,217,87,0.1);
+    }
+
+    .member-initials {
+      font-size: 1.4rem;
+      font-weight: var(--fw-extrabold);
+      color: var(--grey-200);
+      letter-spacing: -0.02em;
+      font-family: 'Manrope', sans-serif;
+    }
+
+    .member-name {
+      font-size: 1rem;
+      font-weight: var(--fw-semibold);
+      color: var(--grey-900);
+      margin-bottom: var(--space-4);
+      letter-spacing: -0.01em;
+    }
+
+    .member-label {
+      font-size: 11px;
+      font-weight: var(--fw-semibold);
+      text-transform: uppercase;
+      letter-spacing: var(--ls-wider);
+      color: var(--grey-300);
+      margin-bottom: var(--space-4);
+    }
+
+    .member-desc {
+      font-size: 11px;
+      color: var(--grey-200);
+      line-height: 1.4;
+    }
+
+    .member-avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      border-radius: 50%;
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" id="main-nav">
+  <div class="container">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo"><img src="SímbolSmartClinity.png" alt="SmartClinity" /></a>
+      <div class="nav__links">
+        <a href="technology.html" class="nav__link">Technology</a>
+        <a href="applications.html" class="nav__link">Applications</a>
+        <a href="platform.html" class="nav__link">Platform</a>
+        <a href="about.html" class="nav__link active">About</a>
+        <a href="contact.html" class="nav__link">Contact</a>
+      </div>
+      <div class="nav__cta"><a href="contact.html" class="btn btn--primary">Request a Demo</a></div>
+      <button class="nav__hamburger" id="hamburger"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+<div class="nav__mobile" id="mobile-menu">
+  <a href="technology.html" class="nav__link">Technology</a>
+  <a href="applications.html" class="nav__link">Applications</a>
+  <a href="platform.html" class="nav__link">Platform</a>
+  <a href="about.html" class="nav__link">About</a>
+  <a href="contact.html" class="nav__link">Contact</a>
+  <a href="contact.html" class="btn btn--primary">Request a Demo</a>
+</div>
+
+<!-- EDITORIAL HERO -->
+<section class="about-hero">
+  <div class="container">
+    <div class="about-hero__overline reveal">
+      <span class="section-label" style="margin-bottom:0;">About SmartClinity</span>
+      <span class="about-hero__line"></span>
+    </div>
+    <h1 class="about-hero__quote reveal reveal-delay-1">
+      Built at the intersection of engineering, clinical knowledge, and digital systems.
+    </h1>
+  </div>
+</section>
+
+<!-- MISSION -->
+<section class="section" id="mission">
+  <div class="container">
+    <div class="split split--40-60" style="align-items:flex-start;">
+      <div>
+        <span class="section-label reveal">Mission</span>
+        <h2 style="font-size:var(--fs-h2); font-weight:var(--fw-extrabold); letter-spacing:var(--ls-tight); color:var(--grey-900); margin-block:var(--space-16) var(--space-24); line-height:1.15; max-width:20ch;" class="reveal reveal-delay-1">
+          We are building the connected infrastructure for clinical fluid management.
+        </h2>
+      </div>
+      <div>
+        <p style="font-size:var(--fs-body-lg); color:var(--grey-500); line-height:var(--lh-relaxed); margin-bottom:var(--space-24);" class="reveal reveal-delay-2">
+          SmartClinity was founded on a simple but consequential observation: the management of clinical fluids — one of the most fundamental aspects of hospital care — has not meaningfully changed with the digital transformation of healthcare.
+        </p>
+        <p style="font-size:var(--fs-body-lg); color:var(--grey-500); line-height:var(--lh-relaxed); margin-bottom:var(--space-24);" class="reveal reveal-delay-3">
+          Drainage bags are still checked manually. Fluid quality is still estimated visually. Documentation is still handled by hand. The clinical blind spots created by this model — and the burden it places on clinical teams — represent an opportunity for intelligent, non-invasive, connected monitoring.
+        </p>
+        <p style="font-size:var(--fs-body-lg); color:var(--grey-500); line-height:var(--lh-relaxed);" class="reveal reveal-delay-4">
+          SmartClinity addresses this by combining embedded sensing, wireless connectivity, and cloud intelligence into a platform designed to integrate with existing clinical infrastructure — not replace it.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VALUES -->
+<section class="section section--grey" id="values">
+  <div class="container">
+    <div class="section-header--center reveal">
+      <span class="section-label">Our Principles</span>
+      <h2 style="font-size:var(--fs-h2); font-weight:var(--fw-extrabold); letter-spacing:var(--ls-tight); color:var(--grey-900); margin-top:var(--space-12);">
+        How we build.
+      </h2>
+    </div>
+    <div class="values-grid reveal">
+      <div class="value-cell">
+        <div class="value-cell__num">01</div>
+        <div class="value-cell__title">Clinical precision first</div>
+        <div class="value-cell__desc">We engineer for the clinical reality — not the ideal lab condition. Reliability, accuracy, and appropriate behaviour in noisy hospital environments are non-negotiable.</div>
+      </div>
+      <div class="value-cell">
+        <div class="value-cell__num">02</div>
+        <div class="value-cell__title">Non-invasive by design</div>
+        <div class="value-cell__desc">All SmartClinity hardware is designed to be external and non-modifying. We augment existing clinical infrastructure without disrupting it.</div>
+      </div>
+      <div class="value-cell">
+        <div class="value-cell__num">03</div>
+        <div class="value-cell__title">Scalable architecture</div>
+        <div class="value-cell__desc">Every engineering and business decision is made with scale in mind — from single device to ward-level, institution-wide, and multi-site deployment.</div>
+      </div>
+      <div class="value-cell">
+        <div class="value-cell__num">04</div>
+        <div class="value-cell__title">Grounded ambition</div>
+        <div class="value-cell__desc">We are technically ambitious and clinically respectful. We do not make claims we cannot validate. We advance with evidence, not hypothesis.</div>
+      </div>
+      <div class="value-cell">
+        <div class="value-cell__num">05</div>
+        <div class="value-cell__title">Multidisciplinary integration</div>
+        <div class="value-cell__desc">The team brings together embedded systems engineering, hardware development, clinical perspective, and business strategy — because the problem demands all of them.</div>
+      </div>
+      <div class="value-cell">
+        <div class="value-cell__num">06</div>
+        <div class="value-cell__title">Long-term data value</div>
+        <div class="value-cell__desc">We understand that data accumulated across a deployed clinical fleet is the foundation for the most powerful value we can ultimately offer — intelligence that improves care.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section class="team-section" id="team">
+  <div class="container">
+    <div class="section-header--center reveal">
+      <span class="section-label">The Team</span>
+      <h2 style="font-size:var(--fs-h2); font-weight:var(--fw-extrabold); letter-spacing:var(--ls-tight); color:var(--grey-900); margin-top:var(--space-12); max-width:22ch;">
+        A multidisciplinary founding team.
+      </h2>
+      <p class="lead" style="color:var(--grey-500); margin-inline:auto; max-width:52ch; margin-top:var(--space-16);">
+        Engineers from the fields of telecommunications and biomedical engineering — united by a shared ambition to transform how hospitals manage clinical fluids.
+      </p>
+    </div>
+
+    <div class="team-outer-grid">
+
+      <div class="member-card reveal">
+        <div class="member-avatar">
+          <img src="FrancescXCarmona.jpg" alt="Francesc X. Carmona" />
+        </div>
+        <div class="member-name">Francesc X. Carmona</div>
+        <div class="member-label">CEO</div>
+      </div>
+
+      <div class="member-card reveal reveal-delay-1">
+        <div class="member-avatar">
+          <img src="ArnauMiralles.jpeg" alt="Arnau Miralles" />
+        </div>
+        <div class="member-name">Arnau Miralles</div>
+        <div class="member-label">CTO</div>
+      </div>
+
+      <div class="member-card reveal reveal-delay-2">
+        <div class="member-avatar">
+          <img src="PatriciaSanchez.jpeg" alt="Patricia Sánchez" />
+        </div>
+        <div class="member-name">Patricia Sánchez</div>
+        <div class="member-label">CFO</div>
+      </div>
+
+      <div class="member-card reveal reveal-delay-3">
+        <div class="member-avatar">
+          <img src="CarlaLicer.jpeg" alt="Carla Licer" />
+        </div>
+        <div class="member-name">Carla Licer</div>
+        <div class="member-label">COO</div>
+      </div>
+
+      <div class="member-card reveal reveal-delay-4">
+        <div class="member-avatar">
+          <img src="ArnauPerín.jpeg" alt="Arnau Perín" />
+        </div>
+        <div class="member-name">Arnau Perín</div>
+        <div class="member-label">CMO</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- VISION -->
+<section class="section" id="vision">
+  <div class="container">
+    <div class="split split--40-60" style="align-items: flex-start;">
+      <div>
+        <span class="section-label reveal">Vision</span>
+        <h2 style="font-size:var(--fs-h2); font-weight:var(--fw-extrabold); letter-spacing:var(--ls-tight); color:var(--grey-900); margin-block:var(--space-16) var(--space-24); line-height:1.15; max-width:18ch;" class="reveal reveal-delay-1">
+          Where we are going.
+        </h2>
+      </div>
+      <div>
+        <p style="font-size:var(--fs-body-lg); color:var(--grey-500); line-height:var(--lh-relaxed); margin-bottom:var(--space-24);" class="reveal reveal-delay-2">
+          SmartClinity's long-term ambition is to become the scalable digital infrastructure layer for hospital fluid management — beginning with drainage monitoring and drug administration, and expanding into broader fluid workflows, predictive analytics, and remote care settings.
+        </p>
+        <p style="font-size:var(--fs-body-lg); color:var(--grey-500); line-height:var(--lh-relaxed); margin-bottom:var(--space-24);" class="reveal reveal-delay-3">
+          We envision a future in which every clinical fluid stream in a hospital is monitored continuously, intelligently, and without burdening the teams responsible for delivering care. Where data accumulated across thousands of monitoring episodes enables a quality of clinical insight that manual practice cannot approach.
+        </p>
+        <p style="font-size:var(--fs-body-lg); color:var(--grey-500); line-height:var(--lh-relaxed);" class="reveal reveal-delay-4">
+          We are at the beginning of that journey — and we are building it with the same precision and care that the clinical environment demands.
+        </p>
+        <div style="margin-top:var(--space-48);" class="reveal reveal-delay-5">
+          <a href="contact.html" class="btn btn--primary">Start a Conversation <span class="btn__arrow">→</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__inner">
+      <div>
+        <div class="footer__logo"><img src="LogoSmartClinity.png" alt="SmartClinity" /></div>
+        <p class="footer__tagline">Connected intelligence for clinical fluid monitoring.</p>
+      </div>
+      <div>
+        <div class="footer__col-title">Navigation</div>
+        <div class="footer__links">
+          <a href="technology.html" class="footer__link">Technology</a>
+          <a href="applications.html" class="footer__link">Applications</a>
+          <a href="platform.html" class="footer__link">Platform</a>
+          <a href="about.html" class="footer__link">About</a>
+          <a href="contact.html" class="footer__link">Contact</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer__col-title">Contact</div>
+        <div class="footer__links">
+          <a href="mailto:francesc.carmona@outlook.com" class="footer__link">francesc.carmona@outlook.com</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span class="footer__copy">© 2025 SmartClinity. All rights reserved.</span>
+      <span class="footer__copy">Medtech · IoT · Clinical Intelligence</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/nav.js"></script>
+<script src="js/scroll-reveal.js"></script>
+</body>
+</html>

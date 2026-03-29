@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Applications — SmartClinity</title>
+  <meta name="description" content="SmartClinity's two clinical applications: drainage monitoring and controlled drug/fluid administration — built on a single connected platform." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/tokens.css" />
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <style>
+    .app-section {
+      padding-block: var(--space-120);
+    }
+    .canvas-wrapper {
+      width: 100%;
+      position: relative;
+      background: var(--grey-50);
+      border: var(--border-thin);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      padding: var(--space-16);
+    }
+    #fluid-quality-graph {
+      width: 100%;
+      height: 280px;
+      display: block;
+    }
+    .graph-caption {
+      font-size: var(--fs-label);
+      font-weight: var(--fw-medium);
+      text-transform: uppercase;
+      letter-spacing: var(--ls-wider);
+      color: var(--grey-300);
+      margin-top: var(--space-12);
+      padding-left: var(--space-8);
+    }
+
+    /* Drug admin flow diagram */
+    .admin-flow {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      background: var(--grey-50);
+      border: var(--border-thin);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+    }
+    .admin-flow-row {
+      display: flex;
+      align-items: center;
+      gap: var(--space-20);
+      padding: var(--space-20) var(--space-24);
+      background: var(--white);
+      border-bottom: var(--border-thin);
+    }
+    .admin-flow-row:last-child { border-bottom: none; }
+    .admin-flow-row__icon {
+      width: 36px;
+      height: 36px;
+      background: var(--grey-50);
+      border: var(--border-thin);
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .admin-flow-row__label {
+      font-size: var(--fs-small);
+      font-weight: var(--fw-semibold);
+      color: var(--grey-900);
+    }
+    .admin-flow-row__sub {
+      font-size: 12px;
+      color: var(--grey-300);
+      margin-top: 2px;
+    }
+    .admin-flow-row__value {
+      margin-left: auto;
+      font-size: var(--fs-small);
+      font-weight: var(--fw-semibold);
+      color: var(--grey-300);
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" id="main-nav">
+  <div class="container">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo"><img src="SímbolSmartClinity.png" alt="SmartClinity" /></a>
+      <div class="nav__links">
+        <a href="technology.html" class="nav__link">Technology</a>
+        <a href="applications.html" class="nav__link active">Applications</a>
+        <a href="platform.html" class="nav__link">Platform</a>
+        <a href="about.html" class="nav__link">About</a>
+        <a href="contact.html" class="nav__link">Contact</a>
+      </div>
+      <div class="nav__cta"><a href="contact.html" class="btn btn--primary">Request a Demo</a></div>
+      <button class="nav__hamburger" id="hamburger"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+<div class="nav__mobile" id="mobile-menu">
+  <a href="technology.html" class="nav__link">Technology</a>
+  <a href="applications.html" class="nav__link">Applications</a>
+  <a href="platform.html" class="nav__link">Platform</a>
+  <a href="about.html" class="nav__link">About</a>
+  <a href="contact.html" class="nav__link">Contact</a>
+  <a href="contact.html" class="btn btn--primary">Request a Demo</a>
+</div>
+
+<!-- HERO -->
+<section class="hero hero--compact" style="background:var(--grey-50); border-bottom: var(--border-thin);">
+  <div class="hero__bg-grid"></div>
+  <div class="container" style="position:relative;z-index:1;">
+    <span class="section-label reveal">Applications</span>
+    <h1 class="hero__headline reveal reveal-delay-1" style="margin-top:var(--space-12);">
+      Two applications.<br/>One connected platform.
+    </h1>
+    <p class="hero__sub reveal reveal-delay-2" style="margin-bottom:0;">
+      SmartClinity's sensing and connectivity architecture supports two distinct clinical product lines — each addressing a critical gap in fluid management within the hospital environment.
+    </p>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════ DRAINAGE ══ -->
+<section class="app-section" id="drainage">
+  <div class="container">
+    <div style="margin-bottom: var(--space-64);">
+      <div style="display:flex; align-items:center; gap:var(--space-16); margin-bottom:var(--space-12);">
+        <span class="section-label" style="margin-bottom:0;">Application 01</span>
+        <span class="tag">Drainage Monitoring</span>
+      </div>
+      <h2 style="font-size:var(--fs-h1); font-weight:var(--fw-extrabold); letter-spacing:var(--ls-tight); color:var(--grey-900); line-height:1.1; max-width:20ch;" class="reveal reveal-delay-1">
+        Continuous, non-invasive drainage intelligence.
+      </h2>
+    </div>
+
+    <div class="split split--40-60" style="gap:clamp(2rem,5vw,5rem);">
+      <div>
+        <p style="font-size:var(--fs-body-lg); color:var(--grey-500); line-height:var(--lh-relaxed); margin-bottom:var(--space-40);" class="reveal">
+          Post-operative and abdominal drainage management currently depends on periodic manual assessment. SmartClinity's drainage monitoring system transforms this workflow — providing continuous, objective data on both the quantity and quality of drained fluid.
+        </p>
+
+        <div class="feature-list reveal reveal-delay-1">
+          <div class="feature-item">
+            <span class="feature-item__dot"></span>
+            <div>
+              <strong style="color:var(--grey-900); display:block; margin-bottom:2px;">External clamp — zero modification</strong>
+              Attaches to the existing drainage tube without altering flow path, connections, or sterile barriers.
+            </div>
+          </div>
+          <div class="feature-item">
+            <span class="feature-item__dot"></span>
+            <div>
+              <strong style="color:var(--grey-900); display:block; margin-bottom:2px;">Ultrasonic flow and volume</strong>
+              Continuous measurement of instantaneous flow rate and cumulative drained volume throughout the monitoring episode.
+            </div>
+          </div>
+          <div class="feature-item">
+            <span class="feature-item__dot"></span>
+            <div>
+              <strong style="color:var(--grey-900); display:block; margin-bottom:2px;">Optical quality analysis</strong>
+              Continuous fluid quality index tracking the relative load of blood, pus, and other substances — enabling objective assessment of how the fluid evolves over time.
+            </div>
+          </div>
+          <div class="feature-item">
+            <span class="feature-item__dot"></span>
+            <div>
+              <strong style="color:var(--grey-900); display:block; margin-bottom:2px;">Real-time cloud dashboard</strong>
+              Fluid data visualised live on the SmartClinity platform — accessible by the clinical team from any connected device.
+            </div>
+          </div>
+          <div class="feature-item">
+            <span class="feature-item__dot"></span>
+            <div>
+              <strong style="color:var(--grey-900); display:block; margin-bottom:2px;">Configurable threshold alerts</strong>
+              Automated alerts triggered when volume rate, accumulated total, or quality index exceeds defined clinical thresholds.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Graph column -->
+      <div class="reveal-scale reveal-delay-2">
+        <p style="font-size:var(--fs-label); font-weight:var(--fw-semibold); text-transform:uppercase; letter-spacing:var(--ls-wider); color:var(--grey-300); margin-bottom:var(--space-12);">
+          Real-time fluid quality monitoring
+        </p>
+        <div class="canvas-wrapper">
+          <canvas id="fluid-quality-graph"></canvas>
+        </div>
+        <p class="graph-caption">Fluid load index — drainage quality evolution over time</p>
+
+        <div style="margin-top:var(--space-24); display:flex; gap:var(--space-24); flex-wrap:wrap;">
+          <div>
+            <div style="font-size:var(--fs-label); font-weight:var(--fw-semibold); text-transform:uppercase; letter-spacing:var(--ls-wider); color:var(--grey-300); margin-bottom:4px;">What it shows</div>
+            <p style="font-size:var(--fs-small); color:var(--grey-500); line-height:var(--lh-relaxed); max-width:38ch;">
+              As drainage progresses, the fluid quality index descends from an initially high load — reflecting the clearance of blood or exudate — and gradually stabilises, indicating a shift toward a cleaner fluid state.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════ DRUG ADMIN ══ -->
+<section class="app-section section--grey" id="admin" style="padding-block: var(--space-120);">
+  <div class="container">
+    <div style="margin-bottom: var(--space-64);">
+      <div style="display:flex; align-items:center; gap:var(--space-16); margin-bottom:var(--space-12);">
+        <span class="section-label" style="margin-bottom:0;">Application 02</span>
+        <span class="tag">Controlled Drug Administration</span>
+      </div>
+      <h2 style="font-size:var(--fs-h1); font-weight:var(--fw-extrabold); letter-spacing:var(--ls-tight); color:var(--grey-900); line-height:1.1; max-width:22ch;" class="reveal reveal-delay-1">
+        Precision flow control for fluid and medication delivery.
+      </h2>
+    </div>
+
+    <div class="split split--60-40" style="gap:clamp(2rem,5vw,5rem);">
+      <!-- Diagram column -->
+      <div class="reveal-scale">
+        <p style="font-size:var(--fs-label); font-weight:var(--fw-semibold); text-transform:uppercase; letter-spacing:var(--ls-wider); color:var(--grey-300); margin-bottom:var(--space-12);">
+          Closed-loop flow control system
+        </p>
+        <div class="admin-flow">
+          <div class="admin-flow-row">
+            <div class="admin-flow-row__icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#a0a0a0" stroke-width="1.5">
+                <path d="M12 2L12 22M7 7h10M6 12h12M7 17h10"/>
+              </svg>
+            </div>
+            <div>
+              <div class="admin-flow-row__label">IV Bag / Serum Source</div>
+              <div class="admin-flow-row__sub">Fluid or medication reservoir</div>
+            </div>
+            <div class="admin-flow-row__value">Input</div>
+          </div>
+          <div class="admin-flow-row">
+            <div class="admin-flow-row__icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#a0a0a0" stroke-width="1.5">
+                <rect x="3" y="8" width="18" height="8" rx="4"/><circle cx="12" cy="12" r="2"/>
+              </svg>
+            </div>
+            <div>
+              <div class="admin-flow-row__label">SmartClinity Clamp</div>
+              <div class="admin-flow-row__sub">External clamp with ultrasonic sensor + pinch valve</div>
+            </div>
+            <div class="admin-flow-row__value">Device</div>
+          </div>
+          <div class="admin-flow-row">
+            <div class="admin-flow-row__icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#5170ff" stroke-width="1.5">
+                <path d="M12 2a10 10 0 100 20A10 10 0 0012 2zm0 6v6l4 2"/>
+              </svg>
+            </div>
+            <div>
+              <div class="admin-flow-row__label">Ultrasonic Flow Measurement</div>
+              <div class="admin-flow-row__sub">Continuous volume rate tracking — feedback to PID</div>
+            </div>
+            <div class="admin-flow-row__value" style="color:#5170ff;">Measure</div>
+          </div>
+          <div class="admin-flow-row">
+            <div class="admin-flow-row__icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#5170ff" stroke-width="1.5">
+                <path d="M12 20V4M4 12h16"/><circle cx="12" cy="12" r="3"/>
+              </svg>
+            </div>
+            <div>
+              <div class="admin-flow-row__label">PID Closed-Loop Control</div>
+              <div class="admin-flow-row__sub">Continuous error correction — target vs actual flow</div>
+            </div>
+            <div class="admin-flow-row__value" style="color:#5170ff;">Control</div>
+          </div>
+          <div class="admin-flow-row">
+            <div class="admin-flow-row__icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#a0a0a0" stroke-width="1.5">
+                <path d="M8 6V4a2 2 0 012-2h4a2 2 0 012 2v2M3 12h18M5 6h14a2 2 0 012 2v12a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2z"/>
+              </svg>
+            </div>
+            <div>
+              <div class="admin-flow-row__label">Pinch Valve Actuator</div>
+              <div class="admin-flow-row__sub">Modulates tube aperture to regulate flow</div>
+            </div>
+            <div class="admin-flow-row__value">Actuate</div>
+          </div>
+          <div class="admin-flow-row" style="background: rgba(137,217,87,0.03);">
+            <div class="admin-flow-row__icon" style="border-color: rgba(137,217,87,0.3);">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(137,217,87,0.8)" stroke-width="1.5">
+                <rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/>
+              </svg>
+            </div>
+            <div>
+              <div class="admin-flow-row__label" style="color:#5a8a20;">Cloud Dashboard · Alerts</div>
+              <div class="admin-flow-row__sub">Real-time monitoring, volume tracking, dose records</div>
+            </div>
+            <div class="admin-flow-row__value" style="color:rgba(137,217,87,0.7);">Monitor</div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <p style="font-size:var(--fs-body-lg); color:var(--grey-500); line-height:var(--lh-relaxed); margin-bottom:var(--space-40);" class="reveal">
+          The drug administration product line applies the same embedded sensing platform to controlled delivery of IV fluids and medications. A pinch-valve actuator modulates flow based on continuous ultrasonic measurement — governed by a PID control loop running onboard the ESP32-C3.
+        </p>
+
+        <div class="feature-list reveal reveal-delay-1">
+          <div class="feature-item">
+            <span class="feature-item__dot"></span>
+            <div>
+              <strong style="color:var(--grey-900); display:block; margin-bottom:2px;">Ultrasonic flow measurement</strong>
+              Accurate, non-contact flow sensing provides precise volume delivery tracking per minute and per session.
+            </div>
+          </div>
+          <div class="feature-item">
+            <span class="feature-item__dot"></span>
+            <div>
+              <strong style="color:var(--grey-900); display:block; margin-bottom:2px;">Pinch-valve actuator</strong>
+              An electronically controlled pinch mechanism modulates the tube aperture — enabling precise, stepless flow regulation without contact with the fluid.
+            </div>
+          </div>
+          <div class="feature-item">
+            <span class="feature-item__dot"></span>
+            <div>
+              <strong style="color:var(--grey-900); display:block; margin-bottom:2px;">PID closed-loop control</strong>
+              The proportional-integral-derivative algorithm continuously corrects the valve position to maintain accurate delivery against the prescribed rate setpoint.
+            </div>
+          </div>
+          <div class="feature-item">
+            <span class="feature-item__dot"></span>
+            <div>
+              <strong style="color:var(--grey-900); display:block; margin-bottom:2px;">Remote monitoring</strong>
+              Real-time dashboard access to flow rate, cumulative volume, and session status — with alerts on delivery interruption or deviation.
+            </div>
+          </div>
+        </div>
+
+        <div style="margin-top:var(--space-40);" class="reveal reveal-delay-2">
+          <a href="contact.html" class="link-arrow">Discuss a pilot <span class="arrow">→</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════ COMPARISON TABLE ══ -->
+<section class="section" id="comparison">
+  <div class="container">
+    <div class="section-header--center reveal" style="margin-bottom:var(--space-48);">
+      <span class="section-label">Comparison</span>
+      <h2 style="font-size:var(--fs-h2); font-weight:var(--fw-extrabold); letter-spacing:var(--ls-tight); color:var(--grey-900); margin-top:var(--space-12);">
+        Both products. One platform.
+      </h2>
+    </div>
+
+    <div style="border: var(--border-thin); border-radius: var(--radius-lg); overflow:hidden;" class="reveal">
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th>Drainage Monitoring</th>
+            <th>Drug Administration</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Sensing method</td>
+            <td>Clamp-on ultrasonic</td>
+            <td>Clamp-on ultrasonic</td>
+          </tr>
+          <tr>
+            <td>Flow measurement</td>
+            <td class="check-yes">✓ Continuous</td>
+            <td class="check-yes">✓ Continuous</td>
+          </tr>
+          <tr>
+            <td>Volume accumulation</td>
+            <td class="check-yes">✓</td>
+            <td class="check-yes">✓</td>
+          </tr>
+          <tr>
+            <td>Optical quality analysis</td>
+            <td class="check-yes">✓ Fluid quality index</td>
+            <td class="check-no">— Not applicable</td>
+          </tr>
+          <tr>
+            <td>Flow control actuator</td>
+            <td class="check-no">— Monitoring only</td>
+            <td class="check-yes">✓ Pinch-valve + PID</td>
+          </tr>
+          <tr>
+            <td>Cloud dashboard</td>
+            <td class="check-yes">✓</td>
+            <td class="check-yes">✓</td>
+          </tr>
+          <tr>
+            <td>Real-time alerts</td>
+            <td class="check-yes">✓ Configurable thresholds</td>
+            <td class="check-yes">✓ Delivery deviation alerts</td>
+          </tr>
+          <tr>
+            <td>MCU platform</td>
+            <td>ESP32-C3 · Wi-Fi</td>
+            <td>ESP32-C3 · Wi-Fi</td>
+          </tr>
+          <tr>
+            <td>Tube modification</td>
+            <td class="check-no">None — external only</td>
+            <td class="check-no">None — external only</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section section--grey reveal" style="padding-block: var(--space-96);">
+  <div class="container">
+    <h2 class="cta-section__headline">Interested in a pilot or technical discussion?</h2>
+    <p class="cta-section__sub">We are open to conversations with clinical institutions, engineers, and investors.</p>
+    <div class="cta-section__actions">
+      <a href="contact.html" class="btn btn--primary">Get in Touch <span class="btn__arrow">→</span></a>
+      <a href="platform.html" class="btn btn--ghost">View Business Model</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__inner">
+      <div>
+        <div class="footer__logo"><img src="LogoSmartClinity.png" alt="SmartClinity" /></div>
+        <p class="footer__tagline">Connected intelligence for clinical fluid monitoring.</p>
+      </div>
+      <div>
+        <div class="footer__col-title">Navigation</div>
+        <div class="footer__links">
+          <a href="technology.html" class="footer__link">Technology</a>
+          <a href="applications.html" class="footer__link">Applications</a>
+          <a href="platform.html" class="footer__link">Platform</a>
+          <a href="about.html" class="footer__link">About</a>
+          <a href="contact.html" class="footer__link">Contact</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer__col-title">Contact</div>
+        <div class="footer__links">
+          <a href="mailto:francesc.carmona@outlook.com" class="footer__link">francesc.carmona@outlook.com</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span class="footer__copy">© 2025 SmartClinity. All rights reserved.</span>
+      <span class="footer__copy">Medtech · IoT · Clinical Intelligence</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/nav.js"></script>
+<script src="js/scroll-reveal.js"></script>
+<script src="js/graph.js"></script>
+</body>
+</html>

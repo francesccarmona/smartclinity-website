@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Platform — SmartClinity</title>
+  <meta name="description" content="SmartClinity's hardware-first, SaaS-recurring, AI-expanding business model — built for clinical institutions, investors, and long-term scalability." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/tokens.css" />
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <style>
+    /* Business model funnel */
+    .biz-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      border: var(--border-thin);
+    }
+    .biz-layer {
+      padding: var(--space-32) var(--space-40);
+      display: flex;
+      align-items: center;
+      gap: var(--space-32);
+      position: relative;
+      overflow: hidden;
+    }
+    .biz-layer::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 4px;
+    }
+    .biz-layer--hw { background: var(--grey-50); }
+    .biz-layer--hw::before { background: var(--grey-200); }
+    .biz-layer--conn { background: var(--white); }
+    .biz-layer--conn::before { background: var(--grey-200); }
+    .biz-layer--saas { background: var(--white); }
+    .biz-layer--saas::before { background: var(--gradient-green); }
+    .biz-layer--ai { background: var(--white); }
+    .biz-layer--ai::before { background: var(--gradient-blue); }
+
+    .biz-layer__num {
+      font-size: var(--fs-label);
+      font-weight: var(--fw-bold);
+      letter-spacing: var(--ls-wider);
+      color: var(--grey-200);
+      min-width: 20px;
+    }
+    .biz-layer__body { flex: 1; }
+    .biz-layer__title {
+      font-size: 1rem;
+      font-weight: var(--fw-semibold);
+      color: var(--grey-900);
+      margin-bottom: var(--space-4);
+    }
+    .biz-layer__desc {
+      font-size: var(--fs-small);
+      color: var(--grey-300);
+      line-height: var(--lh-normal);
+    }
+    .biz-layer__badge {
+      font-size: 11px;
+      font-weight: var(--fw-semibold);
+      text-transform: uppercase;
+      letter-spacing: var(--ls-wide);
+      padding: 5px 14px;
+      border-radius: var(--radius-full);
+      white-space: nowrap;
+    }
+    .biz-layer--hw .biz-layer__badge,
+    .biz-layer--conn .biz-layer__badge {
+      background: var(--grey-100);
+      color: var(--grey-500);
+    }
+    .biz-layer--saas .biz-layer__badge {
+      background: linear-gradient(135deg, rgba(137,217,87,0.15), rgba(246,230,88,0.15));
+      color: #5a8a20;
+      border: 1px solid rgba(137,217,87,0.2);
+    }
+    .biz-layer--ai .biz-layer__badge {
+      background: linear-gradient(135deg, rgba(81,112,255,0.1), rgba(255,163,255,0.1));
+      color: #5170ff;
+      border: 1px solid rgba(81,112,255,0.15);
+    }
+
+    /* Revenue model */
+    .revenue-cards {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: var(--space-2);
+      background: var(--grey-100);
+      border: var(--border-thin);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+    }
+    .revenue-card {
+      background: var(--white);
+      padding: var(--space-48) var(--space-32);
+    }
+    .revenue-card__label {
+      font-size: var(--fs-label);
+      font-weight: var(--fw-semibold);
+      text-transform: uppercase;
+      letter-spacing: var(--ls-wider);
+      color: var(--grey-300);
+      margin-bottom: var(--space-8);
+    }
+    .revenue-card__title {
+      font-size: 1.25rem;
+      font-weight: var(--fw-extrabold);
+      color: var(--grey-900);
+      margin-bottom: var(--space-16);
+      letter-spacing: var(--ls-tight);
+    }
+    .revenue-card__desc {
+      font-size: var(--fs-small);
+      color: var(--grey-500);
+      line-height: var(--lh-relaxed);
+    }
+    @media (max-width: 768px) {
+      .revenue-cards { grid-template-columns: 1fr; }
+    }
+
+    /* Dashboard preview */
+    .dashboard-preview {
+      background: var(--grey-50);
+      border: var(--border-thin);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+    }
+    .dashboard-preview__topbar {
+      background: var(--grey-900);
+      padding: var(--space-12) var(--space-20);
+      display: flex;
+      align-items: center;
+      gap: var(--space-8);
+    }
+    .dashboard-preview__dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+    }
+    .dashboard-preview__body {
+      padding: var(--space-24);
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: var(--space-12);
+    }
+    .dash-cell {
+      background: var(--white);
+      border: var(--border-thin);
+      border-radius: var(--radius-md);
+      padding: var(--space-20);
+    }
+    .dash-cell__label {
+      font-size: 10px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--grey-300);
+      margin-bottom: var(--space-8);
+    }
+    .dash-cell__value {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--grey-900);
+      letter-spacing: -0.03em;
+      line-height: 1;
+    }
+    .dash-cell__sub {
+      font-size: 11px;
+      color: var(--grey-300);
+      margin-top: 4px;
+    }
+    .dash-cell--alert {
+      border-color: rgba(137,217,87,0.3);
+      background: rgba(137,217,87,0.03);
+    }
+    .dash-cell--alert .dash-cell__value { color: #5a8a20; }
+    @media (max-width: 640px) {
+      .dashboard-preview__body { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" id="main-nav">
+  <div class="container">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo"><img src="SímbolSmartClinity.png" alt="SmartClinity" /></a>
+      <div class="nav__links">
+        <a href="technology.html" class="nav__link">Technology</a>
+        <a href="applications.html" class="nav__link">Applications</a>
+        <a href="platform.html" class="nav__link active">Platform</a>
+        <a href="about.html" class="nav__link">About</a>
+        <a href="contact.html" class="nav__link">Contact</a>
+      </div>
+      <div class="nav__cta"><a href="contact.html" class="btn btn--primary">Request a Demo</a></div>
+      <button class="nav__hamburger" id="hamburger"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+<div class="nav__mobile" id="mobile-menu">
+  <a href="technology.html" class="nav__link">Technology</a>
+  <a href="applications.html" class="nav__link">Applications</a>
+  <a href="platform.html" class="nav__link">Platform</a>
+  <a href="about.html" class="nav__link">About</a>
+  <a href="contact.html" class="nav__link">Contact</a>
+  <a href="contact.html" class="btn btn--primary">Request a Demo</a>
+</div>
+
+<!-- HERO -->
+<section class="hero hero--compact" style="background: var(--grey-900); border-bottom: 1px solid rgba(255,255,255,0.08);">
+  <div class="container" style="position:relative;z-index:1;">
+    <span class="section-label reveal" style="color:rgba(255,255,255,0.3);">Business Model</span>
+    <h1 class="hero__headline reveal reveal-delay-1" style="color:var(--white); margin-top:var(--space-12); max-width:17ch;">
+      Hardware deploys.<br/>
+      <span class="text-gradient-green">Software retains.</span><br/>
+      Data compounds.
+    </h1>
+    <p class="hero__sub reveal reveal-delay-2" style="color:rgba(255,255,255,0.5); margin-bottom:0;">
+      SmartClinity's business model is built on a hardware entry point, a recurring SaaS revenue layer, and a future AI-powered premium analytics tier — designed for sustainable, long-term clinical value creation.
+    </p>
+  </div>
+</section>
+
+<!-- BUSINESS MODEL STACK -->
+<section class="section" id="model">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-label">Model Architecture</span>
+      <h2 style="font-size:var(--fs-h2); font-weight:var(--fw-extrabold); letter-spacing:var(--ls-tight); color:var(--grey-900); max-width:22ch; line-height:1.15;">
+        A layered model built for long-term clinical scale.
+      </h2>
+    </div>
+
+    <div class="split split--40-60" style="align-items:flex-start; gap: clamp(2rem,5vw,5rem);">
+      <div>
+        <p style="color:var(--grey-500); line-height:var(--lh-relaxed); margin-bottom:var(--space-40);" class="reveal">
+          SmartClinity enters hospitals through a hardware deployment — a plug-and-play device that can be installed on existing clinical infrastructure with minimal disruption. Once deployed, the SaaS platform creates a continuous, sticky engagement layer that retains value over time. As data accumulates, the AI intelligence tier unlocks premium analytics opportunities.
+        </p>
+        <div class="callout reveal reveal-delay-1">
+          <p>"The hardware installs trust. The data creates value. The intelligence builds competitive distance."</p>
+        </div>
+      </div>
+
+      <div class="biz-stack reveal reveal-delay-1">
+        <div class="biz-layer biz-layer--hw">
+          <div class="biz-layer__num">01</div>
+          <div class="biz-layer__body">
+            <div class="biz-layer__title">Hardware Layer</div>
+            <div class="biz-layer__desc">Plug-and-play clamp device. Installs on existing tubing. Physical entry point into the clinical workflow.</div>
+          </div>
+          <span class="biz-layer__badge">One-time / Financed</span>
+        </div>
+        <div class="biz-layer biz-layer--conn">
+          <div class="biz-layer__num">02</div>
+          <div class="biz-layer__body">
+            <div class="biz-layer__title">Connectivity Layer</div>
+            <div class="biz-layer__desc">Wi-Fi, MQTT, cloud ingestion. Bridges physical device to digital platform continuously.</div>
+          </div>
+          <span class="biz-layer__badge">Embedded</span>
+        </div>
+        <div class="biz-layer biz-layer--saas">
+          <div class="biz-layer__num">03</div>
+          <div class="biz-layer__body">
+            <div class="biz-layer__title">SaaS Platform Layer</div>
+            <div class="biz-layer__desc">Dashboard, alerts, data storage, traceability, audit trails. Recurring subscription per device or enterprise license.</div>
+          </div>
+          <span class="biz-layer__badge">Recurring Revenue</span>
+        </div>
+        <div class="biz-layer biz-layer--ai">
+          <div class="biz-layer__num">04</div>
+          <div class="biz-layer__body">
+            <div class="biz-layer__title">AI Intelligence Layer</div>
+            <div class="biz-layer__desc">Anomaly detection, predictive analytics, pattern recognition. Premium expansion as data accumulates.</div>
+          </div>
+          <span class="biz-layer__badge">Future · Premium</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVENUE MODEL -->
+<section class="section section--grey" id="revenue">
+  <div class="container">
+    <div class="section-header--center reveal">
+      <span class="section-label">Revenue Structure</span>
+      <h2 style="font-size:var(--fs-h2); font-weight:var(--fw-extrabold); letter-spacing:var(--ls-tight); color:var(--grey-900); margin-top:var(--space-12);">
+        Three revenue streams. One platform.
+      </h2>
+    </div>
+    <div class="revenue-cards reveal">
+      <div class="revenue-card">
+        <div class="revenue-card__label">Stream 01</div>
+        <div class="revenue-card__title">Hardware</div>
+        <div class="revenue-card__desc">
+          Device sales or financing arrangements with clinical institutions. One-time revenue with long device lifetimes and natural replacement cycles. Anchors platform adoption.
+        </div>
+      </div>
+      <div class="revenue-card" style="border-left: 2px solid rgba(137,217,87,0.3);">
+        <div class="revenue-card__label" style="color:#5a8a20;">Stream 02 · Core</div>
+        <div class="revenue-card__title" class="text-gradient-green">SaaS Subscription</div>
+        <div class="revenue-card__desc">
+          Per-device monthly subscription or institution-wide enterprise license. Includes dashboard access, alert configuration, data storage, historical visualisation, and traceability export. Recurring, predictable, scalable.
+        </div>
+      </div>
+      <div class="revenue-card" style="border-left: 2px solid rgba(81,112,255,0.2);">
+        <div class="revenue-card__label" style="color:#5170ff;">Stream 03 · Future</div>
+        <div class="revenue-card__title">AI Premium Tier</div>
+        <div class="revenue-card__desc">
+          Advanced analytics, predictive intelligence, and anomaly detection as an add-on premium layer. Monetises data value after sufficient longitudinal accumulation across the installed base.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PLATFORM DETAIL -->
+<section class="section" id="platform">
+  <div class="container">
+    <div class="split" style="align-items:flex-start; gap:clamp(2rem,5vw,5rem);">
+      <div>
+        <span class="section-label reveal">Platform Capabilities</span>
+        <h2 style="font-size:var(--fs-h2); font-weight:var(--fw-extrabold); letter-spacing:var(--ls-tight); color:var(--grey-900); margin-block:var(--space-16) var(--space-24); line-height:1.15;" class="reveal reveal-delay-1">
+          A complete clinical monitoring infrastructure.
+        </h2>
+        <p style="color:var(--grey-500); line-height:var(--lh-relaxed); margin-bottom:var(--space-40); max-width:46ch;" class="reveal reveal-delay-2">
+          The SmartClinity cloud dashboard provides clinical teams with the tools to monitor, analyse, and act on fluid data — across individual patients, wards, or entire institutions.
+        </p>
+        <div class="feature-list reveal reveal-delay-3">
+          <div class="feature-item"><span class="feature-item__dot"></span>Real-time charts and flow rate visualisation</div>
+          <div class="feature-item"><span class="feature-item__dot"></span>Patient-linked data organisation and session management</div>
+          <div class="feature-item"><span class="feature-item__dot"></span>Configurable threshold alerts with notification routing</div>
+          <div class="feature-item"><span class="feature-item__dot"></span>Full audit trail for clinical traceability and documentation</div>
+          <div class="feature-item"><span class="feature-item__dot"></span>Historical data access and export capabilities</div>
+          <div class="feature-item"><span class="feature-item__dot"></span>API layer for future EHR and hospital system integration</div>
+        </div>
+      </div>
+
+      <!-- Dashboard mockup -->
+      <div class="reveal-scale reveal-delay-2">
+        <div class="dashboard-preview">
+          <div class="dashboard-preview__topbar">
+            <span class="dashboard-preview__dot" style="background:#ff5f56;"></span>
+            <span class="dashboard-preview__dot" style="background:#ffbd2e;"></span>
+            <span class="dashboard-preview__dot" style="background:#27c93f;"></span>
+            <span style="font-size:10px; color:rgba(255,255,255,0.25); margin-left:var(--space-12); font-family:Manrope,sans-serif; letter-spacing:1px; font-weight:600;">SMARTCLINITY DASHBOARD</span>
+          </div>
+          <div class="dashboard-preview__body">
+            <div class="dash-cell">
+              <div class="dash-cell__label">Flow Rate</div>
+              <div class="dash-cell__value">12.4</div>
+              <div class="dash-cell__sub">mL / hour</div>
+            </div>
+            <div class="dash-cell">
+              <div class="dash-cell__label">Volume (24h)</div>
+              <div class="dash-cell__value">348</div>
+              <div class="dash-cell__sub">mL accumulated</div>
+            </div>
+            <div class="dash-cell dash-cell--alert">
+              <div class="dash-cell__label">Quality Index</div>
+              <div class="dash-cell__value">0.23</div>
+              <div class="dash-cell__sub">Stabilising ↓</div>
+            </div>
+            <div class="dash-cell" style="grid-column: span 3;">
+              <div class="dash-cell__label">Flow trend — last 6 hours</div>
+              <svg viewBox="0 0 300 60" style="width:100%; margin-top:8px;" fill="none">
+                <polyline points="0,50 30,42 60,38 90,44 120,35 150,30 180,28 210,22 240,18 270,15 300,14"
+                  stroke="#5170ff" stroke-width="1.5" fill="none" stroke-linejoin="round"/>
+                <polyline points="0,50 30,42 60,38 90,44 120,35 150,30 180,28 210,22 240,18 270,15 300,14 300,60 0,60"
+                  fill="rgba(81,112,255,0.05)" stroke="none"/>
+                <line x1="0" y1="14" x2="300" y2="14" stroke="rgba(137,217,87,0.3)" stroke-width="1" stroke-dasharray="3 3"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ROADMAP -->
+<section class="section section--grey" id="roadmap">
+  <div class="container">
+    <div class="section-header--center reveal">
+      <span class="section-label">Strategic Roadmap</span>
+      <h2 style="font-size:var(--fs-h2); font-weight:var(--fw-extrabold); letter-spacing:var(--ls-tight); color:var(--grey-900); margin-top:var(--space-12);">
+        Phased expansion across the clinical fluid ecosystem.
+      </h2>
+    </div>
+    <div class="roadmap reveal">
+      <div class="roadmap-phase">
+        <div class="roadmap-phase__dot"><div class="roadmap-phase__dot-inner" style="background:#89d957;"></div></div>
+        <div class="roadmap-phase__num">Phase 1</div>
+        <div class="roadmap-phase__title">Drainage Monitoring</div>
+        <div class="roadmap-phase__desc">Core product. External clamp, ultrasonic + optical sensing, cloud dashboard, configurable alerts.</div>
+      </div>
+      <div class="roadmap-phase">
+        <div class="roadmap-phase__dot"><div class="roadmap-phase__dot-inner" style="background:#89d957;"></div></div>
+        <div class="roadmap-phase__num">Phase 2</div>
+        <div class="roadmap-phase__title">Drug Administration</div>
+        <div class="roadmap-phase__desc">Precision flow control with PID valve actuation. Serum and medication delivery monitoring.</div>
+      </div>
+      <div class="roadmap-phase">
+        <div class="roadmap-phase__dot"><div class="roadmap-phase__dot-inner"></div></div>
+        <div class="roadmap-phase__num">Phase 3</div>
+        <div class="roadmap-phase__title">Hospital Integration</div>
+        <div class="roadmap-phase__desc">EHR interoperability, multi-device ward management, institutional data infrastructure.</div>
+      </div>
+      <div class="roadmap-phase">
+        <div class="roadmap-phase__dot"><div class="roadmap-phase__dot-inner"></div></div>
+        <div class="roadmap-phase__num">Phase 4</div>
+        <div class="roadmap-phase__title">Predictive AI</div>
+        <div class="roadmap-phase__desc">Anomaly detection, pattern recognition, predictive alerts, AI-enabled clinical intelligence premium tier.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section reveal" style="padding-block: var(--space-120);">
+  <div class="container">
+    <h2 class="cta-section__headline">Open to partnership and investment conversations.</h2>
+    <p class="cta-section__sub">We are building the digital infrastructure layer for hospital fluid management — and we are looking for aligned partners.</p>
+    <div class="cta-section__actions">
+      <a href="contact.html" class="btn btn--primary">Start a Conversation <span class="btn__arrow">→</span></a>
+      <a href="about.html" class="btn btn--ghost">About the Team</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__inner">
+      <div>
+        <div class="footer__logo"><img src="LogoSmartClinity.png" alt="SmartClinity" /></div>
+        <p class="footer__tagline">Connected intelligence for clinical fluid monitoring.</p>
+      </div>
+      <div>
+        <div class="footer__col-title">Navigation</div>
+        <div class="footer__links">
+          <a href="technology.html" class="footer__link">Technology</a>
+          <a href="applications.html" class="footer__link">Applications</a>
+          <a href="platform.html" class="footer__link">Platform</a>
+          <a href="about.html" class="footer__link">About</a>
+          <a href="contact.html" class="footer__link">Contact</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer__col-title">Contact</div>
+        <div class="footer__links">
+          <a href="mailto:francesc.carmona@outlook.com" class="footer__link">francesc.carmona@outlook.com</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span class="footer__copy">© 2025 SmartClinity. All rights reserved.</span>
+      <span class="footer__copy">Medtech · IoT · Clinical Intelligence</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/nav.js"></script>
+<script src="js/scroll-reveal.js"></script>
+</body>
+</html>
