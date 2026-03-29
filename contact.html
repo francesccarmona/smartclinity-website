@@ -322,43 +322,50 @@
       }, 2500);
       return;
     }
+    const btn = document.getElementById('submit-btn');
+    const originalContent = btn.innerHTML;
+    btn.innerText = 'Sending...';
+    btn.disabled = true;
 
-    // Build mailto with all form data pre-filled
-    const subject = `SmartClinity — ${interest}: ${name}`;
-    const body = [
-      `From: ${name}` + (org ? ` (${org})` : ''),
-      `Reply-to: ${email}`,
-      `Interest: ${interest}`,
-      '',
-      '---',
-      '',
-      message
-    ].join('\n');
+    fetch('https://formsubmit.co/ajax/francesc.carmona@outlook.com', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+            "Interest": interest,
+            "Name": name,
+            "Organization": org || 'Not provided',
+            "Email": email,
+            "Message": message
+        })
+    })
+    .then(response => response.json())
+    .then(data => {
+        // Show success confirmation after a brief delay
+        const formEl    = document.getElementById('contact-form-element');
+        const successEl = document.getElementById('form-success');
 
-    const mailtoUrl = `mailto:francesc.carmona@outlook.com`
-      + `?subject=${encodeURIComponent(subject)}`
-      + `&body=${encodeURIComponent(body)}`;
+        formEl.style.opacity   = '0';
+        formEl.style.transform = 'translateY(8px)';
+        formEl.style.transition = 'opacity 300ms, transform 300ms';
 
-    // Open email client
-    window.location.href = mailtoUrl;
-
-    // Show success confirmation after a brief delay
-    const formEl    = document.getElementById('contact-form-element');
-    const successEl = document.getElementById('form-success');
-
-    formEl.style.opacity   = '0';
-    formEl.style.transform = 'translateY(8px)';
-    formEl.style.transition = 'opacity 300ms, transform 300ms';
-
-    setTimeout(() => {
-      formEl.style.display   = 'none';
-      successEl.style.display = 'block';
-      successEl.style.opacity = '0';
-      successEl.style.transition = 'opacity 500ms';
-      successEl.offsetHeight; // force reflow
-      successEl.style.opacity = '1';
-    }, 400);
-  }
+        setTimeout(() => {
+          formEl.style.display   = 'none';
+          successEl.style.display = 'block';
+          successEl.style.opacity = '0';
+          successEl.style.transition = 'opacity 500ms';
+          successEl.offsetHeight; // force reflow
+          successEl.style.opacity = '1';
+        }, 400);
+    })
+    .catch(error => {
+        console.error(error);
+        btn.innerHTML = originalContent;
+        btn.disabled = false;
+        alert('There was an error sending your message. Please try again or email francesc.carmona@outlook.com directly.');
+    });
 </script>
 </body>
 </html>

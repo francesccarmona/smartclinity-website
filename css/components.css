@@ -52,7 +52,7 @@
 .nav__logo img {
   height: 32px;
   width: auto;
-  mix-blend-mode: multiply; /* white PNG background becomes transparent on light nav */
+  /* transparent PNG — no blend mode needed on light nav */
 }
 
 .nav__links {
@@ -99,8 +99,8 @@
 .nav--on-dark .nav__link.active { color: var(--white); }
 .nav--on-dark .nav__link.active::after { background: rgba(255,255,255,0.5); }
 .nav--on-dark .nav__logo img {
-  filter: invert(1); /* black symbol → white, light bg → near-black */
-  mix-blend-mode: screen; /* near-black bg disappears on dark hero, white symbol shows */
+  filter: invert(1); /* black symbol → white on dark hero */
+  /* no blend mode needed: PNG background is transparent */
 }
 .nav--on-dark .nav__hamburger span { background: var(--white); }
 
@@ -575,6 +575,7 @@
 
 .comparison-table {
   width: 100%;
+  min-width: 600px;
   border-collapse: collapse;
 }
 
