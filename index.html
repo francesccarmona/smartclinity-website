@@ -34,6 +34,15 @@
       align-items: center;
       justify-content: center;
     }
+    .problem-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
+    @media (max-width: 900px) {
+      .problem-grid { grid-template-columns: 1fr; }
+      .problem-stat:not(:last-child) { border-right: none !important; border-bottom: var(--border-thin) !important; }
+      .problem-stat:last-child { border-bottom: none !important; }
+    }
     /* Problem section */
     .problem-stat {
       padding: var(--space-48) var(--space-40);
@@ -140,7 +149,7 @@
   <div class="container">
     <div class="nav__inner">
       <a href="index.html" class="nav__logo">
-        <img src="SímbolSmartClinity.png" alt="SmartClinity" />
+        <img src="SímbolSmartClinity_SenseFons.png" alt="SmartClinity" />
       </a>
       <div class="nav__links">
         <a href="technology.html" class="nav__link">Technology</a>
@@ -281,7 +290,7 @@
     </div>
 
     <div style="border: var(--border-thin); border-radius: var(--radius-lg); overflow:hidden; background:var(--white);">
-      <div style="display:grid; grid-template-columns: repeat(3, 1fr);">
+      <div class="problem-grid">
 
         <div class="problem-stat reveal">
           <div class="problem-stat__icon">
