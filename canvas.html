@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SmartClinity</title>
+  <link rel="icon" type="image/png" href="assets/icons/smartclinity-symbol.png" />
+  <link rel="shortcut icon" href="assets/icons/smartclinity-symbol.png" />
+  <link rel="apple-touch-icon" href="assets/icons/smartclinity-symbol.png" />
+  <meta name="application-name" content="SmartClinity" />
+  <meta property="og:site_name" content="SmartClinity" />
+  <meta name="apple-mobile-web-app-title" content="SmartClinity" />
+  <meta name="description" content="SmartClinity is a medtech company combining IoT, automation, and cloud intelligence to transform how clinical fluids are monitored and managed." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/tokens.css" />
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <style>
+    /* ── Home-specific styles ── */
+    .hero-home {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: var(--space-64);
+      padding-top: var(--nav-height);
+      position: relative;
+      overflow: hidden;
+    }
+    @media (max-width: 900px) {
+      .hero-home { grid-template-columns: 1fr; }
+      .hero-diagram-col { display: none; }
+    }
+    .hero-diagram-col {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .problem-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
+    @media (max-width: 900px) {
+      .problem-grid { grid-template-columns: 1fr; }
+      .problem-stat:not(:last-child) { border-right: none !important; border-bottom: var(--border-thin) !important; }
+      .problem-stat:last-child { border-bottom: none !important; }
+    }
+    /* Problem section */
+    .problem-stat {
+      padding: var(--space-48) var(--space-40);
+      border-bottom: var(--border-thin);
+    }
+    .problem-stat:not(:last-child) {
+      border-right: var(--border-thin);
+    }
+    .problem-stat__icon {
+      width: 32px;
+      height: 32px;
+      margin-bottom: var(--space-20);
+      color: var(--grey-200);
+    }
+    .problem-stat__title {
+      font-size: 1.1rem;
+      font-weight: var(--fw-semibold);
+      color: var(--grey-900);
+      margin-bottom: var(--space-8);
+    }
+    .problem-stat__body {
+      font-size: var(--fs-body);
+      color: var(--grey-500);
+      line-height: var(--lh-relaxed);
+    }
+    @media (max-width: 768px) {
+      .problem-stat:not(:last-child) { border-right: none; }
+      .problem-stat { border-bottom: var(--border-thin); }
+    }
+    /* Flow diagram */
+    .flow-nodes {
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      gap: 0;
+      position: relative;
+      padding: var(--space-64) 0;
+    }
+    .flow-node {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      flex: 1;
+      position: relative;
+    }
+    .flow-node:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      top: 28px;
+      right: -50%;
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(90deg, rgba(255,255,255,0.2), rgba(137,217,87,0.5), rgba(255,255,255,0.2));
+      z-index: 0;
+    }
+    .flow-node__circle {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.15);
+      background: rgba(255,255,255,0.06);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: var(--space-16);
+      position: relative;
+      z-index: 1;
+      transition: border-color var(--transition-base), background var(--transition-base);
+    }
+    .flow-node:hover .flow-node__circle {
+      border-color: rgba(137,217,87,0.5);
+      background: rgba(137,217,87,0.08);
+    }
+    .flow-node__label {
+      font-size: 11px;
+      font-weight: var(--fw-semibold);
+      text-transform: uppercase;
+      letter-spacing: var(--ls-wide);
+      color: rgba(255,255,255,0.45);
+      margin-bottom: var(--space-4);
+    }
+    .flow-node__desc {
+      font-size: 11px;
+      color: rgba(255,255,255,0.25);
+      line-height: 1.4;
+      max-width: 80px;
+    }
+    @media (max-width: 640px) {
+      .flow-nodes {
+        flex-direction: column;
+        align-items: center;
+        gap: var(--space-32);
+      }
+      .flow-node { width: 100%; }
+      .flow-node:not(:last-child)::after { display: none; }
+    }
+  </style>
+<link rel="stylesheet" href="css/canvas.css">
+</head>
+<body>
+
+<!-- ══════════════════════════════════ NAV ══ -->
+<nav class="nav" id="main-nav">
+  <div class="container">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo">
+        <img src="SímbolSmartClinity_SenseFons.png" alt="SmartClinity" />
+      </a>
+      <div class="nav__links">
+        <a href="technology.html" class="nav__link">Technology</a>
+        <a href="applications.html" class="nav__link">Applications</a>
+        <a href="platform.html" class="nav__link">Platform</a>
+        <a href="canvas.html" class="nav__link active">Canvas</a>
+        <a href="about.html" class="nav__link">About</a>
+        <a href="contact.html" class="nav__link">Contact</a>
+      </div>
+      <div class="nav__cta">
+        <a href="contact.html" class="btn btn--primary">Request a Demo</a>
+      </div>
+      <button class="nav__hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile menu -->
+<div class="nav__mobile" id="mobile-menu">
+  <a href="technology.html" class="nav__link">Technology</a>
+  <a href="applications.html" class="nav__link">Applications</a>
+  <a href="platform.html" class="nav__link">Platform</a>
+  <a href="canvas.html" class="nav__link active">Canvas</a>
+        <a href="about.html" class="nav__link">About</a>
+  <a href="contact.html" class="nav__link">Contact</a>
+  <a href="contact.html" class="btn btn--primary">Request a Demo</a>
+</div>
+
+<!-- ══════════════════════════════════ HERO ══ -->
+<section class="section" style="padding-top: calc(var(--nav-height) + 2rem);">
+<main class="canvas-container">
+        <!-- Row A: Core Strategic Areas -->
+        <div class="row-a">
+            <!-- Column 1 -->
+            <div class="col-split">
+                <div class="canvas-card" id="card-key-partners" tabindex="0" role="button"></div>
+                <div class="canvas-card" id="card-competitive-advantage" tabindex="0" role="button"></div>
+            </div>
+
+            <!-- Column 2 -->
+            <div class="col-split">
+                <div class="canvas-card" id="card-key-activities" tabindex="0" role="button"></div>
+                <div class="canvas-card" id="card-key-resources" tabindex="0" role="button"></div>
+            </div>
+
+            <!-- Column 3 (Full Height) -->
+            <div class="canvas-card val-prop-card" id="card-value-proposition" tabindex="0" role="button"></div>
+
+            <!-- Column 4 -->
+            <div class="col-split">
+                <div class="canvas-card" id="card-customer-relationships" tabindex="0" role="button"></div>
+                <div class="canvas-card" id="card-channels" tabindex="0" role="button"></div>
+            </div>
+
+            <!-- Column 5 (Full Height) -->
+            <div class="canvas-card" id="card-customer-segments" tabindex="0" role="button"></div>
+        </div>
+
+        <!-- Row B: Economic Engine (Unified Rectangle) -->
+        <div class="band-card" id="band-economic" tabindex="0" role="button">
+            <!-- Injected by app.js -->
+        </div>
+
+        <!-- Row C: Social & Environmental Impact (Unified Rectangle) -->
+        <div class="band-card" id="band-social" tabindex="0" role="button">
+            <!-- Injected by app.js -->
+        </div>
+    </main>
+
+    <!-- Modal / Expanded View Overlay -->
+    <div class="modal-overlay" id="modal">
+        <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+            <button class="close-btn" id="close-modal" aria-label="Close">
+                <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+            <div class="modal-header">
+                <div class="modal-icon" id="modal-icon"></div>
+                <h2 class="modal-title" id="modal-title"></h2>
+            </div>
+            <div class="modal-body">
+                <div class="core-sentence" id="modal-core-sentence"></div>
+                <ul class="modal-bullets" id="modal-bullets"></ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__inner">
+      <div>
+        <div class="footer__logo">
+          <img src="LogoSmartClinity.png" alt="SmartClinity" />
+        </div>
+        <p class="footer__tagline">Connected intelligence for clinical fluid monitoring. Medtech · IoT · Cloud · AI.</p>
+      </div>
+      <div>
+        <div class="footer__col-title">Navigation</div>
+        <div class="footer__links">
+          <a href="technology.html" class="footer__link">Technology</a>
+          <a href="applications.html" class="footer__link">Applications</a>
+          <a href="platform.html" class="footer__link">Platform</a>
+          <a href="canvas.html" class="footer__link">Canvas</a>`n          <a href="about.html" class="footer__link">About</a>
+          <a href="contact.html" class="footer__link">Contact</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer__col-title">Contact</div>
+        <div class="footer__links">
+          <a href="mailto:francesc.carmona@outlook.com" class="footer__link">francesc.carmona@outlook.com</a>
+          <a href="contact.html" class="footer__link">Request a Demo</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span class="footer__copy">© 2025 SmartClinity. All rights reserved.</span>
+      <span class="footer__copy">Medtech · IoT · Clinical Intelligence</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/nav.js"></script>
+<script src="js/scroll-reveal.js"></script>
+<script src="js/canvas-data.js"></script>
+<script src="js/canvas-app.js"></script>
+</body>
+</html>
+
+
+
+
