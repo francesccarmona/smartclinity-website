@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Join Us — SmartClinity</title>
+  <link rel="icon" type="image/png" href="assets/icons/smartclinity-symbol.png" />
+  <link rel="shortcut icon" href="assets/icons/smartclinity-symbol.png" />
+  <link rel="apple-touch-icon" href="assets/icons/smartclinity-symbol.png" />
+  <meta name="application-name" content="SmartClinity" />
+  <meta property="og:site_name" content="SmartClinity" />
+  <meta name="apple-mobile-web-app-title" content="SmartClinity" />
+  <meta name="description" content="SmartClinity is actively looking for strategic partners. See how we've built the company over the past months and how we plan to reach the market." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/tokens.css" />
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/join-us.css" />
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" id="main-nav">
+  <div class="container">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo"><img src="SímbolSmartClinity_SenseFons.png" alt="SmartClinity" /></a>
+      <div class="nav__links">
+        <a href="technology.html" class="nav__link">Technology</a>
+        <a href="applications.html" class="nav__link">Applications</a>
+        <a href="platform.html" class="nav__link">Platform</a>
+        <a href="canvas.html" class="nav__link">Canvas</a>
+        <a href="about.html" class="nav__link">About</a>
+        <a href="join-us.html" class="nav__link active">Join Us</a>
+        <a href="contact.html" class="nav__link">Contact</a>
+      </div>
+      <div class="nav__cta"><a href="contact.html" class="btn btn--primary">Request a Demo</a></div>
+      <button class="nav__hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+<div class="nav__mobile" id="mobile-menu">
+  <a href="technology.html" class="nav__link">Technology</a>
+  <a href="applications.html" class="nav__link">Applications</a>
+  <a href="platform.html" class="nav__link">Platform</a>
+  <a href="canvas.html" class="nav__link">Canvas</a>
+  <a href="about.html" class="nav__link">About</a>
+  <a href="join-us.html" class="nav__link">Join Us</a>
+  <a href="contact.html" class="nav__link">Contact</a>
+  <a href="contact.html" class="btn btn--primary">Request a Demo</a>
+</div>
+
+<!-- ════════════════════════════════════════════════
+     HERO — Investor call
+     ════════════════════════════════════════════════ -->
+<section class="join-hero">
+  <div class="join-hero__bg"></div>
+  <svg class="join-hero__wave" viewBox="0 0 1440 100" preserveAspectRatio="none" aria-hidden="true">
+    <defs>
+      <linearGradient id="hero-wave-grad" x1="0" y1="0" x2="1" y2="0">
+        <stop offset="0%"  stop-color="#5170ff"/>
+        <stop offset="100%" stop-color="#ffa3ff"/>
+      </linearGradient>
+    </defs>
+    <path d="M0,60 Q120,20 240,60 T480,60 T720,60 T960,60 T1200,60 T1440,60" fill="none" stroke="url(#hero-wave-grad)" stroke-width="1.2"/>
+  </svg>
+  <div class="container">
+    <div class="join-hero__inner">
+      <div class="join-hero__overline reveal">
+        <span class="dot"></span>
+        <span>Open Round · Strategic Partners</span>
+      </div>
+      <h1 class="join-hero__title reveal">
+        Do you want to <span class="grad">join us?</span>
+      </h1>
+      <p class="join-hero__sub reveal">
+        We're actively looking for strategic partners. SmartClinity already has clinical validation in motion, hospital backing and an active grant. This page is how we work — and where we go next.
+      </p>
+      <div class="join-hero__actions reveal">
+        <a href="mailto:francesc.carmona@outlook.com?subject=Partner%20interest%20in%20SmartClinity" class="btn btn--gradient-blue">
+          Talk to the founders <span class="btn__arrow">→</span>
+        </a>
+        <a href="#how-we-work" class="btn btn--ghost">
+          See how we work
+        </a>
+      </div>
+      <div class="join-hero__stats reveal" aria-label="Traction snapshot">
+        <div class="join-hero__stat">
+          <div class="join-hero__stat-num">1</div>
+          <div class="join-hero__stat-label">Pilot hospital committed</div>
+        </div>
+        <div class="join-hero__stat">
+          <div class="join-hero__stat-num">5</div>
+          <div class="join-hero__stat-label">EMSA-funded devices in build</div>
+        </div>
+        <div class="join-hero__stat">
+          <div class="join-hero__stat-num">€30K</div>
+          <div class="join-hero__stat-label">Year-one runway target</div>
+        </div>
+        <div class="join-hero__stat">
+          <div class="join-hero__stat-num">Q1 2027</div>
+          <div class="join-hero__stat-label">Market launch goal</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════
+     STEP 0 — How we work intro
+     ════════════════════════════════════════════════ -->
+<section class="join-section join-section--white" id="how-we-work">
+  <div class="container">
+    <div class="reveal">
+      <span class="step-marker">Step 0 · Context</span>
+      <h2 class="step-title">How do we work? A one-minute view of SmartClinity.</h2>
+      <p class="step-lead">
+        SmartClinity is a medtech company combining IoT, automation and cloud intelligence to make clinical fluid monitoring continuous, non-invasive and traceable. Two flagship devices, one cloud platform, one product narrative.
+      </p>
+    </div>
+
+    <div class="idea-arch reveal">
+      <div class="arch-node">
+        <div class="arch-node__icon" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 12c2-4 6-4 8 0s6 4 8 0"/></svg>
+        </div>
+        <div class="arch-node__title">Sensor</div>
+        <div class="arch-node__sub">Non-invasive clamp</div>
+      </div>
+      <div class="arch-node">
+        <div class="arch-node__icon" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="6" width="16" height="12" rx="2"/><path d="M9 18v2M15 18v2"/></svg>
+        </div>
+        <div class="arch-node__title">ESP32-C3</div>
+        <div class="arch-node__sub">Edge node</div>
+      </div>
+      <div class="arch-node">
+        <div class="arch-node__icon" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 12a7 7 0 0 1 14 0M8 14a4 4 0 0 1 8 0M11 16h2"/></svg>
+        </div>
+        <div class="arch-node__title">Wi-Fi / MQTT</div>
+        <div class="arch-node__sub">Secure transport</div>
+      </div>
+      <div class="arch-node">
+        <div class="arch-node__icon" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 17a4 4 0 1 1 1-7.9A5 5 0 0 1 17 9a4 4 0 0 1 1 8H6Z"/></svg>
+        </div>
+        <div class="arch-node__title">Cloud</div>
+        <div class="arch-node__sub">Storage + AI</div>
+      </div>
+      <div class="arch-node">
+        <div class="arch-node__icon" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M7 21h10M12 17v4"/></svg>
+        </div>
+        <div class="arch-node__title">Dashboard</div>
+        <div class="arch-node__sub">Real-time alerts</div>
+      </div>
+      <div class="arch-node">
+        <div class="arch-node__icon" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="9" cy="8" r="3"/><path d="M3 20a6 6 0 0 1 12 0M16 13a2.5 2.5 0 1 0 0-5M14 20a5 5 0 0 1 8 0"/></svg>
+        </div>
+        <div class="arch-node__title">Clinical team</div>
+        <div class="arch-node__sub">Human-in-the-loop</div>
+      </div>
+    </div>
+
+    <div class="audience-row">
+      <div class="audience-card reveal">
+        <div class="audience-card__label">Segment · Now</div>
+        <div class="audience-card__title">Hospitals</div>
+        <div class="audience-card__desc">Less manual load for nurses, full drainage traceability, smarter triage of alerts in surgical and ICU units.</div>
+      </div>
+      <div class="audience-card reveal">
+        <div class="audience-card__label">Segment · Next</div>
+        <div class="audience-card__title">Residencies</div>
+        <div class="audience-card__desc">Continuous oversight where clinical staff are thinner. Centralized dashboard, automatic escalation, predictable workloads.</div>
+      </div>
+      <div class="audience-card reveal">
+        <div class="audience-card__label">Segment · Future</div>
+        <div class="audience-card__title">Home care</div>
+        <div class="audience-card__desc">Telemedicine-grade continuity outside the hospital — patient, family, and remote clinician on the same page.</div>
+      </div>
+    </div>
+
+    <div class="idea-tagline reveal">
+      From manual checks <span class="grad">to continuous intelligence.</span>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════
+     STEP 1 — MARKETING
+     ════════════════════════════════════════════════ -->
+<section class="join-section join-section--grey" id="marketing">
+  <div class="container">
+    <div class="reveal">
+      <span class="step-marker">Step 1 · Marketing</span>
+      <h2 class="step-title">How we reach the market.</h2>
+      <p class="step-lead">
+        We mapped three buying contexts, built three campaigns and chose channels that fit each clinical reality — not a generic startup funnel.
+      </p>
+    </div>
+
+    <!-- Brand identity recap -->
+    <div class="brand-mini reveal" aria-label="SmartClinity brand identity recap">
+      <div>
+        <div class="brand-mini__label">Brand</div>
+        <div class="brand-mini__title">SmartClinity visual identity</div>
+        <div class="brand-mini__sub">Clean clinical neutrals · two functional gradients · one typeface — every campaign respects this system.</div>
+      </div>
+      <div class="brand-mini__swatches" aria-hidden="true">
+        <span class="brand-mini__chip brand-mini__chip--white" title="#ffffff"></span>
+        <span class="brand-mini__chip brand-mini__chip--grey"  title="#d9d9d9"></span>
+        <span class="brand-mini__chip brand-mini__chip--green" title="Green gradient · life, care"></span>
+        <span class="brand-mini__chip brand-mini__chip--blue"  title="Blue→pink gradient · cloud, AI"></span>
+        <span class="brand-mini__chip brand-mini__chip--black" title="Functional black"></span>
+      </div>
+      <div class="brand-mini__type">
+        Manrope
+        <span>Regular · Semibold · Bold</span>
+      </div>
+    </div>
+
+    <!-- Channels grid -->
+    <div class="channels-grid reveal" aria-label="Channels per segment">
+      <div class="channel-col">
+        <div class="channel-col__head">
+          <div class="channel-col__icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="9" width="18" height="12" rx="1"/><path d="M9 9V6h6v3M12 13v4M10 15h4"/></svg>
+          </div>
+          <div class="channel-col__name">Hospitals</div>
+        </div>
+        <ul class="channel-col__list">
+          <li>B2B presentations</li>
+          <li>Medical congresses</li>
+          <li>LinkedIn (medical direction & innovation)</li>
+          <li>Direct meetings</li>
+          <li>Prototype demos</li>
+        </ul>
+      </div>
+      <div class="channel-col">
+        <div class="channel-col__head">
+          <div class="channel-col__icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 21V10l8-6 8 6v11"/><path d="M9 21v-6h6v6"/></svg>
+          </div>
+          <div class="channel-col__name">Residencies</div>
+        </div>
+        <ul class="channel-col__list">
+          <li>Direct contact with center direction</li>
+          <li>Residency associations</li>
+          <li>Simplified commercial material</li>
+          <li>Webinars + on-site demos</li>
+        </ul>
+      </div>
+      <div class="channel-col">
+        <div class="channel-col__head">
+          <div class="channel-col__icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 12l9-8 9 8"/><path d="M5 10v11h14V10M9 21v-6h6v6"/></svg>
+          </div>
+          <div class="channel-col__name">Home care</div>
+        </div>
+        <ul class="channel-col__list">
+          <li>Corporate web</li>
+          <li>Future digital campaigns</li>
+          <li>Insurance / telemedicine partnerships</li>
+          <li>Mobile app + caregiver portal</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Three campaigns -->
+    <div class="reveal" style="margin-top: var(--space-96);">
+      <h3 style="font-size:var(--fs-h3); font-weight:var(--fw-semibold); color:var(--grey-900); margin-bottom: var(--space-12);">Three campaigns, one promise.</h3>
+      <p style="font-size:var(--fs-small); color:var(--grey-500); max-width:60ch;">Each campaign speaks to the real pain of a real clinical setting. The promise stays the same: support the professional, never replace them.</p>
+    </div>
+    <div class="campaigns-grid">
+      <article class="campaign-card reveal" data-lightbox
+               data-src="assets/join-us/campaign-hospitals.jpeg"
+               data-seg="Hospitals" data-tag="More time caring. Less time searching."
+               tabindex="0" role="button" aria-label="Open hospitals campaign in full size">
+        <div class="campaign-card__img">
+          <img src="assets/join-us/campaign-hospitals.jpeg" alt="Hospitals campaign creative">
+          <span class="campaign-card__zoom" aria-hidden="true">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-5-5M8 11h6M11 8v6"/></svg>
+          </span>
+        </div>
+        <div class="campaign-card__body">
+          <div class="campaign-card__seg">Hospitals</div>
+          <div class="campaign-card__tag">More time caring. Less time searching.</div>
+        </div>
+      </article>
+      <article class="campaign-card reveal" data-lightbox
+               data-src="assets/join-us/campaign-residencies.jpeg"
+               data-seg="Residencies" data-tag="Protection that never sleeps."
+               tabindex="0" role="button" aria-label="Open residencies campaign in full size">
+        <div class="campaign-card__img">
+          <img src="assets/join-us/campaign-residencies.jpeg" alt="Residencies campaign creative">
+          <span class="campaign-card__zoom" aria-hidden="true">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-5-5M8 11h6M11 8v6"/></svg>
+          </span>
+        </div>
+        <div class="campaign-card__body">
+          <div class="campaign-card__seg">Residencies</div>
+          <div class="campaign-card__tag">Protection that never sleeps.</div>
+        </div>
+      </article>
+      <article class="campaign-card reveal" data-lightbox
+               data-src="assets/join-us/campaign-homecare.jpeg"
+               data-seg="Home care" data-tag="Clinical care, at home."
+               tabindex="0" role="button" aria-label="Open home care campaign in full size">
+        <div class="campaign-card__img">
+          <img src="assets/join-us/campaign-homecare.jpeg" alt="Home care campaign creative">
+          <span class="campaign-card__zoom" aria-hidden="true">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-5-5M8 11h6M11 8v6"/></svg>
+          </span>
+        </div>
+        <div class="campaign-card__body">
+          <div class="campaign-card__seg">Home care</div>
+          <div class="campaign-card__tag">Clinical care, at home.</div>
+        </div>
+      </article>
+    </div>
+
+    <!-- Differentiation -->
+    <div class="reveal" style="margin-top: var(--space-96);">
+      <h3 style="font-size:var(--fs-h3); font-weight:var(--fw-semibold); color:var(--grey-900); margin-bottom: var(--space-12);">How we stay different.</h3>
+      <p style="font-size:var(--fs-small); color:var(--grey-500); max-width:60ch;">Three deliberate choices that shape every customer touch-point.</p>
+    </div>
+    <div class="diff-row">
+      <div class="diff-card reveal">
+        <div class="diff-card__num">01</div>
+        <div class="diff-card__title">Professional-first messaging</div>
+        <div class="diff-card__desc">We position SmartClinity as support, never replacement. The nurse, the doctor and the caregiver stay central in every screen and every campaign.</div>
+      </div>
+      <div class="diff-card reveal">
+        <div class="diff-card__num">02</div>
+        <div class="diff-card__title">Humanized tech voice</div>
+        <div class="diff-card__desc">We translate medtech into plain clinical language. No overpromising AI, no fear-based copy, no jargon that doesn't earn its place.</div>
+      </div>
+      <div class="diff-card reveal">
+        <div class="diff-card__num">03</div>
+        <div class="diff-card__title">Campaign per real pain</div>
+        <div class="diff-card__desc">Hospitals, residencies and home care have different bottlenecks. We don't compress them into one ad — we build for each context.</div>
+      </div>
+    </div>
+
+    <!-- Mini timeline -->
+    <div class="phase-mini">
+      <div class="phase-mini__col reveal">
+        <div class="phase-mini__head"><span class="phase-mini__dot phase-mini__dot--done"></span> Done</div>
+        <ul class="phase-mini__list">
+          <li>Market & communication analysis</li>
+          <li>Brand identity and positioning</li>
+          <li>Client segmentation (3 segments)</li>
+          <li>Three campaign concepts</li>
+          <li>Initial communication assets</li>
+        </ul>
+      </div>
+      <div class="phase-mini__col reveal">
+        <div class="phase-mini__head"><span class="phase-mini__dot phase-mini__dot--prog"></span> In progress</div>
+        <ul class="phase-mini__list">
+          <li>Pitch deck refinement</li>
+          <li>Campaign visual production</li>
+          <li>Channel definition per segment</li>
+          <li>Coordination with product & sales</li>
+          <li>Spoken pitch preparation</li>
+        </ul>
+      </div>
+      <div class="phase-mini__col reveal">
+        <div class="phase-mini__head"><span class="phase-mini__dot phase-mini__dot--futur"></span> Planned</div>
+        <ul class="phase-mini__list">
+          <li>Message validation with clinicians</li>
+          <li>Hospital campaign launch</li>
+          <li>Market response measurement</li>
+          <li>Residency campaign rollout</li>
+          <li>Home care campaign preparation</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════
+     STEP 2 — REGULATORY AFFAIRS
+     ════════════════════════════════════════════════ -->
+<section class="join-section join-section--white" id="regulatory">
+  <div class="container">
+    <div class="reveal">
+      <span class="step-marker step-marker--grad-green">Step 2 · Regulatory</span>
+      <h2 class="step-title">Regulation as a strategic moat.</h2>
+      <p class="step-lead">
+        Medtech regulation is hard. We treat that as an opportunity, not a tax — we built a deployment that snaps onto the workflows hospitals already have.
+      </p>
+    </div>
+
+    <div class="reg-quote reveal">
+      Working in medtech is regulatorily complex. <strong>We know it.</strong> That's why we've designed an implementation that <em>adds onto</em> the workflows hospitals already have, minimizing friction with clinicians and turning regulation into a competitive advantage for SmartClinity.
+    </div>
+
+    <div class="reg-badges reveal" aria-label="Regulatory frameworks mapped">
+      <span class="reg-badge">MDR 2017/745</span>
+      <span class="reg-badge">CE Marking</span>
+      <span class="reg-badge">GDPR</span>
+      <span class="reg-badge">ISO 13485</span>
+      <span class="reg-badge">ISO 14971</span>
+      <span class="reg-badge">IEC 62304</span>
+      <span class="reg-badge">ISO 27001</span>
+    </div>
+
+    <div class="reg-class reveal">
+      <div>
+        <div class="reg-class__num">Class IIa</div>
+      </div>
+      <div class="reg-class__txt">Preliminary device classification</div>
+    </div>
+
+    <div class="phase-mini">
+      <div class="phase-mini__col reveal">
+        <div class="phase-mini__head"><span class="phase-mini__dot phase-mini__dot--done"></span> Done</div>
+        <ul class="phase-mini__list">
+          <li>Initial regulatory & clinical analysis</li>
+          <li>Compliance study (MDR, ISO, IEC, GDPR)</li>
+          <li>Preliminary device classification</li>
+          <li>Preliminary clinical & safety protocols</li>
+        </ul>
+      </div>
+      <div class="phase-mini__col reveal">
+        <div class="phase-mini__head"><span class="phase-mini__dot phase-mini__dot--prog"></span> In progress</div>
+        <ul class="phase-mini__list">
+          <li>Technical documentation organization</li>
+          <li>Initial risk analysis (ISO 14971)</li>
+          <li>Clinical validation protocols</li>
+          <li>Cybersecurity protocols (GDPR / ISO 27001)</li>
+          <li>Coordination with technical & clinical teams</li>
+        </ul>
+      </div>
+      <div class="phase-mini__col reveal">
+        <div class="phase-mini__head"><span class="phase-mini__dot phase-mini__dot--futur"></span> Planned</div>
+        <ul class="phase-mini__list">
+          <li>Full regulatory validation</li>
+          <li>CE marking preparation</li>
+          <li>Pilot clinical validation supervision</li>
+          <li>Post-market surveillance setup</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="reg-tagline reveal">
+      Low clinical friction. <span class="grad">High regulatory rigor.</span>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════
+     STEP 3 — IMPLEMENTATION
+     ════════════════════════════════════════════════ -->
+<section class="join-section join-section--grey" id="implementation">
+  <div class="container">
+    <div class="reveal">
+      <span class="step-marker step-marker--grad-blue">Step 3 · Implementation</span>
+      <h2 class="step-title">Where we are. Where we're going.</h2>
+      <p class="step-lead">
+        Every department has its own phase plan. Click any phase to read tasks, dependencies, time estimate and resources — the same data we use internally.
+      </p>
+    </div>
+
+    <!-- Phase board (always visible, primary interactive view) -->
+    <div class="impl-view reveal" data-view="board" aria-label="Phase board" style="margin-top: var(--space-40);">
+      <div id="phase-board" class="phase-board" aria-live="polite"></div>
+    </div>
+
+    <!-- Stacked custom diagrams: PERT + Gantt rendered from phases.json -->
+    <div class="impl-stack">
+
+      <!-- PERT -->
+      <div id="custom-pert" class="diagram-card reveal">
+        <div class="diagram-card__head">
+          <div>
+            <div class="diagram-card__title">PERT · Cross-department flow</div>
+            <div class="diagram-card__sub">Four phases, every task colored by status. Click any task to open the full detail.</div>
+            <div class="diagram-legend">
+              <span class="diagram-legend__item"><span class="diagram-legend__swatch diagram-legend__swatch--done"></span>Done</span>
+              <span class="diagram-legend__item"><span class="diagram-legend__swatch diagram-legend__swatch--prog"></span>In progress</span>
+              <span class="diagram-legend__item"><span class="diagram-legend__swatch diagram-legend__swatch--futur"></span>Planned</span>
+              <span class="diagram-legend__item"><span class="diagram-legend__swatch diagram-legend__swatch--crit"></span>Goal</span>
+            </div>
+          </div>
+        </div>
+        <div class="diagram-card__body">
+          <div id="pert-canvas" class="pert-canvas"></div>
+        </div>
+      </div>
+
+      <!-- Gantt -->
+      <div id="custom-gantt" class="diagram-card reveal">
+        <div class="diagram-card__head">
+          <div>
+            <div class="diagram-card__title">Gantt · Timeline to market launch</div>
+            <div class="diagram-card__sub">Every department, every phase. Done · in progress · planned, with predicted dates. Pilot Q3 2026 — launch Q1 2027.</div>
+            <div class="diagram-legend">
+              <span class="diagram-legend__item"><span class="diagram-legend__swatch diagram-legend__swatch--done"></span>Done</span>
+              <span class="diagram-legend__item"><span class="diagram-legend__swatch diagram-legend__swatch--prog"></span>In progress</span>
+              <span class="diagram-legend__item"><span class="diagram-legend__swatch diagram-legend__swatch--futur"></span>Planned</span>
+              <span class="diagram-legend__item"><span class="diagram-legend__swatch diagram-legend__swatch--crit"></span>Critical</span>
+            </div>
+          </div>
+        </div>
+        <div class="diagram-card__body">
+          <div id="gantt-canvas" class="gantt-canvas"></div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Launch banner -->
+    <div class="launch-banner reveal">
+      <div class="launch-banner__inner">
+        <div>
+          <div class="launch-banner__label">Ambitious but compressed</div>
+          <div class="launch-banner__title">50 devices. 1–2 pilot hospitals. CE preparation in parallel.</div>
+          <p class="launch-banner__sub">We are not stretching the runway — we are compressing the validation loop. The 30 K€ ask buys the evidence that opens the next round and the first paying hospital.</p>
+        </div>
+        <div class="launch-banner__dates">
+          <div class="launch-banner__date">
+            <div class="launch-banner__date-label">Pilot deployment</div>
+            <div class="launch-banner__date-val">Q3 2026</div>
+          </div>
+          <div class="launch-banner__date">
+            <div class="launch-banner__date-label">Market launch</div>
+            <div class="launch-banner__date-val">Q1 2027</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════
+     STEP 4 — FINANCES
+     ════════════════════════════════════════════════ -->
+<section class="join-section join-section--white" id="finances">
+  <div class="container">
+    <div class="reveal">
+      <span class="step-marker">Step 4 · Finances</span>
+      <h2 class="step-title">Hardware deploys. Software retains.</h2>
+      <p class="step-lead">
+        SmartClinity is not a hardware-only sale. The device opens the door — the recurring SaaS layer is what scales.
+      </p>
+    </div>
+
+    <div class="fin-banner reveal">
+      <div>
+        <div class="fin-banner__lema">
+          <span class="grad-blue">Hardware</span> deploys.
+          <span class="grad-green">Software</span> retains.
+        </div>
+        <p class="fin-banner__sub">
+          The device price stays simple and validated. The recurring revenue comes from cloud, AI modules, integrations and B2B licensing — each one independent from hardware unit economics.
+        </p>
+      </div>
+      <div class="fin-banner__price">
+        <div class="fin-banner__price-num">62 €</div>
+        <div class="fin-banner__price-label">Per device · all-in hardware cost</div>
+      </div>
+    </div>
+
+    <div class="saas-layers">
+      <div class="saas-layer reveal">
+        <div class="saas-layer__icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 17a4 4 0 1 1 1-7.9A5 5 0 0 1 17 9a4 4 0 0 1 1 8H6Z"/></svg>
+        </div>
+        <h3>Cloud platform</h3>
+        <p>Monthly subscription per hospital. Devices, users and clinical units scale the plan. Predictable MRR per validated center.</p>
+      </div>
+      <div class="saas-layer reveal">
+        <div class="saas-layer__icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="3"/><path d="M3 12h3M18 12h3M12 3v3M12 18v3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M5.6 18.4l2.1-2.1M16.3 7.7l2.1-2.1"/></svg>
+        </div>
+        <h3>AI premium modules</h3>
+        <p>Add-ons priced per device, hospital or active patient. AI Insight, Clinical Assist, Enterprise Governance and Home Care — sold separately from the base plan.</p>
+      </div>
+      <div class="saas-layer reveal">
+        <div class="saas-layer__icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="6" width="18" height="12" rx="2"/><path d="M8 10h8M8 14h5"/></svg>
+        </div>
+        <h3>B2B licensing</h3>
+        <p>License the platform to robotics, insurance and home-assistance companies. Pricing per patient, device or API — channel scales outside the hospital.</p>
+      </div>
+    </div>
+
+    <!-- Pricing tiers -->
+    <div class="reveal" style="margin-top: var(--space-96);">
+      <h3 style="font-size:var(--fs-h3); font-weight:var(--fw-semibold); color:var(--grey-900); margin-bottom: var(--space-12);">Cloud and AI pricing — at a glance.</h3>
+      <p style="font-size:var(--fs-small); color:var(--grey-500); max-width:60ch;">Initial commercial packaging. Prices are orientative and will be calibrated with the first hospital cohort.</p>
+    </div>
+    <div class="pricing-table reveal" aria-label="Cloud and AI pricing plans">
+      <div class="pricing-row pricing-row--head">
+        <div>Plan</div><div>Price</div><div>What's included</div><div>Target</div>
+      </div>
+      <div class="pricing-row">
+        <div class="pricing-row__plan">Trial Cloud</div>
+        <div class="pricing-row__price">490 €/mo</div>
+        <div class="pricing-row__inc">25 devices, 5 users, dashboard, alerts, CSV/PDF export</div>
+        <div class="pricing-row__target">First pilot</div>
+      </div>
+      <div class="pricing-row">
+        <div class="pricing-row__plan">Clinical Cloud Standard</div>
+        <div class="pricing-row__price">950 €/mo</div>
+        <div class="pricing-row__inc">75 devices, 15 users, configurable alerts, monthly reports, basic API</div>
+        <div class="pricing-row__target">Multi-team hospital</div>
+      </div>
+      <div class="pricing-row">
+        <div class="pricing-row__plan">Clinical Cloud Premium</div>
+        <div class="pricing-row__price">1,750 €/mo</div>
+        <div class="pricing-row__inc">200 devices, 40 users, advanced roles, audit trail, integrations, priority support</div>
+        <div class="pricing-row__target">Multi-unit hospital</div>
+      </div>
+      <div class="pricing-row">
+        <div class="pricing-row__plan">Network Enterprise</div>
+        <div class="pricing-row__price">from 3,500 €/mo</div>
+        <div class="pricing-row__inc">500 devices, 100 users, SSO, governance, SLA, executive reporting</div>
+        <div class="pricing-row__target">Hospital network</div>
+      </div>
+      <div class="pricing-row">
+        <div class="pricing-row__plan">AI Insight</div>
+        <div class="pricing-row__price">250 €/mo + 2 €/device</div>
+        <div class="pricing-row__inc">Trends, anomaly detection, automatic reports</div>
+        <div class="pricing-row__target">Trial / Standard add-on</div>
+      </div>
+      <div class="pricing-row">
+        <div class="pricing-row__plan">AI Clinical Assist</div>
+        <div class="pricing-row__price">650 €/mo + 4 €/device</div>
+        <div class="pricing-row__inc">Risk score, alert prioritization, adaptive thresholds, shift summary</div>
+        <div class="pricing-row__target">High-volume hospital</div>
+      </div>
+      <div class="pricing-row">
+        <div class="pricing-row__plan">AI Enterprise Governance</div>
+        <div class="pricing-row__price">from 1,500 €/mo + 3 €/device</div>
+        <div class="pricing-row__inc">Model monitoring, traceability, audit reports, cohort tuning</div>
+        <div class="pricing-row__target">Hospital networks</div>
+      </div>
+      <div class="pricing-row">
+        <div class="pricing-row__plan">AI Home Care</div>
+        <div class="pricing-row__price">3–7 €/patient</div>
+        <div class="pricing-row__inc">Home alerts, remote follow-up, caregiver flows</div>
+        <div class="pricing-row__target">Telemedicine partners</div>
+      </div>
+    </div>
+
+    <!-- Ask -->
+    <div class="ask-block reveal">
+      <div>
+        <div class="ask-block__num">30 K€</div>
+        <div class="ask-block__label">Year-one ask</div>
+      </div>
+      <div class="ask-block__copy">
+        <h3>To validate. Recurring revenue to scale.</h3>
+        <p>Year one is for evidence, not for production. The 30 K€ buys clinical proof, regulatory groundwork and the first paying hospital. From month one, every validated center adds to MRR.</p>
+        <ul class="ask-block__split">
+          <li>What it funds<strong>50 pilot devices</strong></li>
+          <li>Cloud<strong>Lean serverless</strong></li>
+          <li>Regulatory<strong>Documentation + risk</strong></li>
+          <li>Ops<strong>Founder-led</strong></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════
+     STEP 5 — RESULTS
+     ════════════════════════════════════════════════ -->
+<section class="join-section join-section--white join-section--last" id="results">
+  <div class="container">
+    <div class="reveal">
+      <span class="step-marker step-marker--grad-green">Step 5 · Results</span>
+      <h2 class="step-title">We are not pitching. We are already running.</h2>
+      <p class="step-lead">
+        Four partners are already moving with us — hospital validation, regulatory expertise, market campaigns and grant funding. The market is ready; we have started building.
+      </p>
+    </div>
+
+    <div class="partners-grid">
+      <article class="partner-card reveal">
+        <div class="partner-card__logo">
+          <img src="assets/join-us/HospitalJoanXXIII.png" alt="Hospital Joan XXIII Tarragona logo">
+        </div>
+        <div class="partner-card__body">
+          <div class="partner-card__name">Hospital Joan XXIII · Tarragona</div>
+          <div class="partner-card__role">Committed to clinical validation of our device and its future hospital deployment.</div>
+          <span class="partner-card__link">Validation partner</span>
+        </div>
+      </article>
+
+      <article class="partner-card reveal">
+        <div class="partner-card__logo">
+          <img src="assets/join-us/OpenHPEcollective.png" alt="Open HPE Collective logo">
+        </div>
+        <div class="partner-card__body">
+          <div class="partner-card__name">Open HPE Collective</div>
+          <div class="partner-card__role">Co-authoring our medical protocols, quality controls and regulatory adaptation for the healthcare sector.</div>
+          <a class="partner-card__link" href="https://beamish-creponne-9549f2.netlify.app" target="_blank" rel="noopener">Visit partner →</a>
+        </div>
+      </article>
+
+      <article class="partner-card reveal">
+        <div class="partner-card__logo">
+          <img src="assets/join-us/knock.png" alt="Knock Labs logo">
+        </div>
+        <div class="partner-card__body">
+          <div class="partner-card__name">Knock Labs</div>
+          <div class="partner-card__role">Specialized agency validating market interest and running our awareness campaigns to listen to real customer signal.</div>
+          <a class="partner-card__link" href="https://knocklabs.es/es" target="_blank" rel="noopener">Visit partner →</a>
+        </div>
+      </article>
+
+      <article class="partner-card reveal">
+        <div class="partner-card__logo">
+          <img src="assets/join-us/EMSA.png" alt="EMSA grant logo">
+        </div>
+        <div class="partner-card__body">
+          <div class="partner-card__name">EMSA grant</div>
+          <div class="partner-card__role">Funding the first five physical units, accelerating the technical and clinical validation of the solution.</div>
+          <span class="partner-card__link">Institutional support</span>
+        </div>
+      </article>
+    </div>
+
+    <div class="closing reveal">
+      <p class="closing__quote">
+        Join the new generation of healthcare solutions. We're looking for investors and partners willing to be part of a project with clinical validation, hospital support and real market need. <span style="display:block; margin-top:var(--space-12); color:var(--grey-500); font-weight:var(--fw-regular);">This is the moment to build the future of health with us.</span>
+      </p>
+      <div class="closing__cta">
+        <a href="mailto:francesc.carmona@outlook.com?subject=Partner%20interest%20in%20SmartClinity" class="btn btn--gradient-blue">
+          Become a partner <span class="btn__arrow">→</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LIGHTBOX (campaign image viewer) -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-hidden="true" aria-label="Campaign image viewer">
+  <button class="lightbox__close" id="lightbox-close" aria-label="Close">×</button>
+  <button class="lightbox__nav lightbox__nav--prev" id="lightbox-prev" aria-label="Previous">‹</button>
+  <button class="lightbox__nav lightbox__nav--next" id="lightbox-next" aria-label="Next">›</button>
+  <div class="lightbox__frame">
+    <img class="lightbox__img" id="lightbox-img" alt="">
+    <div class="lightbox__caption">
+      <div class="lightbox__caption-seg" id="lightbox-seg"></div>
+      <div class="lightbox__caption-tag" id="lightbox-tag"></div>
+    </div>
+  </div>
+</div>
+
+<!-- PHASE PANEL (modal aside) -->
+<div class="phase-panel-bg" id="phase-panel-bg"></div>
+<aside class="phase-panel" id="phase-panel" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="panel-title">
+  <header class="phase-panel__head">
+    <button class="phase-panel__close" id="phase-panel-close" aria-label="Close panel">×</button>
+    <div class="phase-panel__id" id="panel-id"></div>
+    <h3 class="phase-panel__title" id="panel-title"></h3>
+    <span class="phase-panel__status" id="panel-status"></span>
+  </header>
+  <div class="phase-panel__body">
+    <div class="phase-panel__section">
+      <h4>Tasks</h4>
+      <ul id="panel-tasks"></ul>
+    </div>
+    <div class="phase-panel__section">
+      <h4>Details</h4>
+      <div class="phase-panel__meta">
+        <div class="phase-panel__meta-item">
+          <div class="phase-panel__meta-label">Dependencies</div>
+          <div class="phase-panel__meta-val" id="panel-deps"></div>
+        </div>
+        <div class="phase-panel__meta-item">
+          <div class="phase-panel__meta-label">Time estimate</div>
+          <div class="phase-panel__meta-val" id="panel-time"></div>
+        </div>
+        <div class="phase-panel__meta-item">
+          <div class="phase-panel__meta-label">Margin</div>
+          <div class="phase-panel__meta-val" id="panel-margin"></div>
+        </div>
+        <div class="phase-panel__meta-item">
+          <div class="phase-panel__meta-label">Resources</div>
+          <div class="phase-panel__meta-val" id="panel-resources"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</aside>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__inner">
+      <div>
+        <div class="footer__logo"><img src="LogoSmartClinity.png" alt="SmartClinity" /></div>
+        <p class="footer__tagline">Connected intelligence for clinical fluid monitoring.</p>
+      </div>
+      <div>
+        <div class="footer__col-title">Navigation</div>
+        <div class="footer__links">
+          <a href="technology.html" class="footer__link">Technology</a>
+          <a href="applications.html" class="footer__link">Applications</a>
+          <a href="platform.html" class="footer__link">Platform</a>
+          <a href="canvas.html" class="footer__link">Canvas</a>
+          <a href="about.html" class="footer__link">About</a>
+          <a href="join-us.html" class="footer__link">Join Us</a>
+          <a href="contact.html" class="footer__link">Contact</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer__col-title">Contact</div>
+        <div class="footer__links">
+          <a href="mailto:francesc.carmona@outlook.com" class="footer__link">francesc.carmona@outlook.com</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span class="footer__copy">© 2025 SmartClinity. All rights reserved.</span>
+      <span class="footer__copy">Medtech · IoT · Clinical Intelligence</span>
+    </div>
+  </div>
+</footer>
+
+<!-- Custom diagrams are built from data/phases.json — no external libraries. -->
+<script src="js/nav.js"></script>
+<script src="js/scroll-reveal.js"></script>
+<script src="js/join-us.js"></script>
+</body>
+</html>

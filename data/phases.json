@@ -1,0 +1,972 @@
+{
+  "meta": {
+    "company": "SmartClinity",
+    "generatedFrom": [
+      "FASES DE MÀRQUETING - SMARTCLINITY.txt",
+      "Fases implementació technologies.txt",
+      "# CRA REGULATORY AFFAIRS – SMARTCLINITY.txt"
+    ],
+    "departments": {
+      "technology": { "label": "Technology", "color": "#5170ff", "gradient": "linear-gradient(135deg,#5170ff,#ffa3ff)" },
+      "regulatory": { "label": "Regulatory", "color": "#89d957", "gradient": "linear-gradient(135deg,#89d957,#f6e658)" },
+      "marketing":  { "label": "Marketing",  "color": "#a0a0a0", "gradient": "linear-gradient(135deg,#a0a0a0,#d9d9d9)" },
+      "finance":    { "label": "Finance",    "color": "#3a3a3a", "gradient": "linear-gradient(135deg,#3a3a3a,#6b6b6b)" },
+      "ops":        { "label": "Operations", "color": "#6b6b6b", "gradient": "linear-gradient(135deg,#6b6b6b,#a0a0a0)" }
+    },
+    "marketEntry": {
+      "pilotDeployment": "Q3 2026",
+      "marketLaunch":    "Q1 2027",
+      "tagline": "50 devices, 1–2 pilot hospitals, CE preparation in parallel. We compress the validation loop."
+    }
+  },
+
+  "marketing": {
+    "department": "marketing",
+    "done": [
+      {
+        "id": "M-1.1",
+        "title": "Initial market & communication analysis",
+        "tasks": [
+          "Identify the core problem to communicate: manual drainage monitoring.",
+          "Map how it affects nursing, clinical teams, hospital managers, residencies and home-care patients.",
+          "Position SmartClinity as professional support, not replacement.",
+          "Define the central message: less manual load, better traceability, continuous monitoring."
+        ],
+        "deps": "Initial clinical & functional analysis",
+        "time": "1 week",
+        "margin": "±3 days",
+        "resources": "Market study, clinical review, competitor analysis, internal meetings"
+      },
+      {
+        "id": "M-1.2",
+        "title": "Brand identity definition",
+        "tasks": [
+          "Name SmartClinity = smart technology + clinical environment.",
+          "Logo, isotype and visual application.",
+          "Typography Manrope for clinical legibility.",
+          "Palette: green (life), blue-magenta (tech), grey (neutral), white (clean)."
+        ],
+        "deps": "Positioning + initial value proposition",
+        "time": "1 week",
+        "margin": "±3 days",
+        "resources": "Design team, brand guidelines, graphic tools"
+      },
+      {
+        "id": "M-1.3",
+        "title": "Commercial positioning",
+        "tasks": [
+          "SmartClinity as connected clinical monitoring solution.",
+          "Turn clinical data into actionable insight.",
+          "Headline: \"More time caring, less time searching.\"",
+          "Tone: professional, human, technological."
+        ],
+        "deps": "Brand identity + internal validation",
+        "time": "4 days",
+        "margin": "±2 days",
+        "resources": "Marketing, CEO, CTO, product docs"
+      },
+      {
+        "id": "M-1.4",
+        "title": "Initial client segmentation",
+        "tasks": [
+          "Three segments: Hospitals, Residencies, Home care (future).",
+          "Pain per segment defined.",
+          "Hospital prioritized as first market."
+        ],
+        "deps": "Market analysis + initial product definition",
+        "time": "1 week",
+        "margin": "±3 days",
+        "resources": "Market research, internal meetings, user analysis"
+      },
+      {
+        "id": "M-1.5",
+        "title": "Three campaigns — conceptual design",
+        "tasks": [
+          "Hospitals: \"More time caring. Less time searching.\"",
+          "Residencies: \"Protection that never sleeps.\"",
+          "Home care: \"Clinical care, at home.\"",
+          "Visual + emotional concept of each campaign."
+        ],
+        "deps": "Segmentation + brand identity",
+        "time": "1 week",
+        "margin": "±3 days",
+        "resources": "Creative team, design tools, mockups"
+      },
+      {
+        "id": "M-1.6",
+        "title": "Initial communication materials",
+        "tasks": [
+          "Pitch deck content.",
+          "CMO presentation script.",
+          "Short commercial copy per segment.",
+          "Visual identity integrated."
+        ],
+        "deps": "Conceptual campaigns",
+        "time": "1 week",
+        "margin": "±3 days",
+        "resources": "Slides, brand docs, campaign visuals"
+      }
+    ],
+    "inProgress": [
+      {
+        "id": "M-2.1",
+        "title": "Pitch deck refinement",
+        "tasks": [
+          "Less on-screen text + complementary spoken script.",
+          "Integrate brand identity, campaigns, channels.",
+          "Coordinate with the rest of the C-team."
+        ],
+        "deps": "Initial communication materials",
+        "time": "4 days",
+        "margin": "±2 days",
+        "resources": "Corporate deck, marketing team, peer feedback"
+      },
+      {
+        "id": "M-2.2",
+        "title": "Campaign visual production",
+        "tasks": [
+          "Creatives for hospitals, residencies and home care.",
+          "Adapt each image to the message.",
+          "Logo, typography and palette consistency across all three."
+        ],
+        "deps": "Identity + approved concepts",
+        "time": "1 week",
+        "margin": "±3 days",
+        "resources": "Design tools, image generation, creative review"
+      },
+      {
+        "id": "M-2.3",
+        "title": "Channel definition per segment",
+        "tasks": [
+          "Hospitals: B2B presentations, medical congresses, LinkedIn, direct meetings with medical & innovation direction, prototype demos.",
+          "Residencies: direct contact, residency associations, simplified commercial material, webinars and demos.",
+          "Home care: corporate web, future digital campaigns, partnerships with insurers/telemedicine, mobile app."
+        ],
+        "deps": "Segmentation + commercial model",
+        "time": "4 days",
+        "margin": "±2 days",
+        "resources": "Channel analysis, sales team, B2B strategy"
+      },
+      {
+        "id": "M-2.4",
+        "title": "Coordination with product development",
+        "tasks": [
+          "Verify which features are presented as current vs. roadmap.",
+          "Align speech around sensor, dashboard, alerts, cloud and AI.",
+          "Avoid promising non-implemented features."
+        ],
+        "deps": "Partial technical development",
+        "time": "3 days",
+        "margin": "±2 days",
+        "resources": "CTO, technical team, functional docs"
+      },
+      {
+        "id": "M-2.5",
+        "title": "Coordination with business model & sales",
+        "tasks": [
+          "Adapt marketing message to the business model.",
+          "Hardware + SaaS + premium features discourse.",
+          "Avoid inconsistencies between communication and price."
+        ],
+        "deps": "Initial business model",
+        "time": "4 days",
+        "margin": "±2 days",
+        "resources": "CFO, CEO, marketing, cost analysis"
+      },
+      {
+        "id": "M-2.6",
+        "title": "Spoken pitch — preparation",
+        "tasks": [
+          "5-minute CMO oral script.",
+          "Time-split between role, identity, campaigns, closing.",
+          "Strong promise-of-brand closing."
+        ],
+        "deps": "Deck + visuals ready",
+        "time": "2 days",
+        "margin": "±1 day",
+        "resources": "Script, deck, oral rehearsals, peer feedback"
+      }
+    ],
+    "future": [
+      {
+        "id": "M-3.1",
+        "title": "Validate message with clinical users",
+        "tasks": [
+          "Present message to real or simulated clinical profiles.",
+          "Collect feedback from nurses, doctors and clinical managers.",
+          "Identify doubts, objections, improvements.",
+          "Realign message to clinical reality."
+        ],
+        "deps": "Hospital pitch + campaign finished",
+        "time": "1 week",
+        "margin": "±4 days",
+        "resources": "Clinical contacts, interviews, commercial material"
+      },
+      {
+        "id": "M-3.2",
+        "title": "Hospital campaign launch",
+        "tasks": [
+          "First commercial action through hospital campaign.",
+          "Present to hospitals, surgical units, innovation areas.",
+          "Nurse-centric message: fewer manual rounds, alerts, automatic records.",
+          "Capture first leads."
+        ],
+        "deps": "Validated message + demoable prototype",
+        "time": "2 weeks",
+        "margin": "±1 week",
+        "resources": "Final deck, one-pager, web, demo, sales team"
+      },
+      {
+        "id": "M-3.3",
+        "title": "Measure market response",
+        "tasks": [
+          "Track interest, meetings, recurring objections.",
+          "Identify barriers: price, integration, security, regulation, usability.",
+          "Adapt value proposition."
+        ],
+        "deps": "First hospital campaign launched",
+        "time": "1 week",
+        "margin": "±3 days",
+        "resources": "CRM, tracking sheets, marketing + sales"
+      },
+      {
+        "id": "M-3.4",
+        "title": "Residency campaign adaptation & launch",
+        "tasks": [
+          "Adapt hospital message to residency context.",
+          "Focus on smaller staff and continuous oversight need.",
+          "Launch in residencies via associations, direct meetings, webinars."
+        ],
+        "deps": "Hospital campaign learnings",
+        "time": "3 weeks",
+        "margin": "±2 weeks",
+        "resources": "Adapted visuals, residency contacts, sales team"
+      },
+      {
+        "id": "M-3.5",
+        "title": "Home care campaign preparation",
+        "tasks": [
+          "Telemedicine + home monitoring message.",
+          "Position home care as roadmap, not first market.",
+          "Patient/family/caregiver-oriented language.",
+          "Channels: web, app, telemedicine, insurers."
+        ],
+        "deps": "Product maturity + clinical validation",
+        "time": "1 week",
+        "margin": "±5 days",
+        "resources": "Marketing, technical roadmap, UX, home-care market study"
+      },
+      {
+        "id": "M-3.6",
+        "title": "Advanced commercial assets",
+        "tasks": [
+          "Demo videos.",
+          "Use cases for hospital, residency, home care.",
+          "Fair + congress + investor material.",
+          "Stakeholder-specific docs (nursing, medical direction, management, investors, partners)."
+        ],
+        "deps": "Initial campaigns validated + product maturity",
+        "time": "2 weeks",
+        "margin": "±1 week",
+        "resources": "Design, A/V, web, sales"
+      }
+    ]
+  },
+
+  "technology": {
+    "department": "technology",
+    "done": [
+      {
+        "id": "T-1.1",
+        "title": "Initial clinical & functional analysis",
+        "tasks": [
+          "Define clinical need and global objectives.",
+          "Study usage scenarios and operational constraints.",
+          "Preliminary functional requirements.",
+          "Technical, structural and energy restrictions."
+        ],
+        "deps": "—",
+        "time": "1 week",
+        "margin": "±3 days",
+        "resources": "Research team, scientific docs, literature review"
+      },
+      {
+        "id": "T-1.2",
+        "title": "Physical study & theoretical model",
+        "tasks": [
+          "Physics of the problem.",
+          "Physiological variables + signals of interest.",
+          "Propagation, noise, physical limitations.",
+          "Conceptual system behavior."
+        ],
+        "deps": "Initial analysis",
+        "time": "2 weeks",
+        "margin": "±5 days",
+        "resources": "Simulations, math tools, technical review"
+      },
+      {
+        "id": "T-1.3",
+        "title": "Translating requirements into technology architecture",
+        "tasks": [
+          "Convert physical to electronic & digital requirements.",
+          "Preliminary sensor, data acquisition, comms.",
+          "Initial cloud + AI processing needs.",
+          "Data flow device ↔ platform."
+        ],
+        "deps": "Physical model complete",
+        "time": "1 week",
+        "margin": "±3 days",
+        "resources": "Design tools, systems architecture"
+      },
+      {
+        "id": "T-1.4",
+        "title": "Technology study & selection",
+        "tasks": [
+          "Compare electronic + digital technologies.",
+          "Compatibility HW ↔ cloud ↔ AI.",
+          "Preliminary component, software and infra selection.",
+          "Technical feasibility study."
+        ],
+        "deps": "Preliminary architecture",
+        "time": "1 week",
+        "margin": "±2 days",
+        "resources": "Tech catalogs, software environments"
+      },
+      {
+        "id": "T-1.5",
+        "title": "Functional & structural requirements",
+        "tasks": [
+          "Target precision + admissible latency.",
+          "Energy + communication requirements.",
+          "Cloud + data treatment requirements.",
+          "Minimum AI training requirements."
+        ],
+        "deps": "Preliminary technology selection",
+        "time": "4 days",
+        "margin": "±2 days",
+        "resources": "Technical docs, functional definition"
+      },
+      {
+        "id": "T-1.6",
+        "title": "Modular system design",
+        "tasks": [
+          "Functional blocks definition.",
+          "HW ↔ cloud ↔ AI layer split.",
+          "Internal data flows.",
+          "Subsystem interfaces and communications."
+        ],
+        "deps": "Requirements defined",
+        "time": "1 week",
+        "margin": "±3 days",
+        "resources": "CAD tools, software architecture"
+      },
+      {
+        "id": "T-1.7",
+        "title": "Detailed electronic system design",
+        "tasks": [
+          "Electronic schematics.",
+          "Structural and connection design.",
+          "Physical integration process.",
+          "Modular assembly plan."
+        ],
+        "deps": "Modular architecture",
+        "time": "2 weeks",
+        "margin": "±5 days",
+        "resources": "Electronic design SW, simulation tools"
+      },
+      {
+        "id": "T-1.8",
+        "title": "Preliminary cloud platform design",
+        "tasks": [
+          "Data structure.",
+          "Device communication design.",
+          "Preliminary databases and cloud flows.",
+          "Remote visualization & management plan."
+        ],
+        "deps": "General architecture",
+        "time": "1 week",
+        "margin": "±3 days",
+        "resources": "Cloud architecture, backend services"
+      },
+      {
+        "id": "T-1.9",
+        "title": "Preliminary AI model design",
+        "tasks": [
+          "AI model type.",
+          "Input/output variables.",
+          "Data needs.",
+          "Training pipeline plan."
+        ],
+        "deps": "Data flow defined",
+        "time": "1 week",
+        "margin": "±3 days",
+        "resources": "AI tools, data analysis, software architecture"
+      },
+      {
+        "id": "T-1.10",
+        "title": "Conceptual validation & preliminary tests",
+        "tasks": [
+          "Preliminary functional simulations.",
+          "Subsystem compatibility validation.",
+          "Data flow verification.",
+          "Comms + stability checks."
+        ],
+        "deps": "Electronic + cloud + AI preliminary designs",
+        "time": "1 week",
+        "margin": "±3 days",
+        "resources": "Simulation, test environments"
+      }
+    ],
+    "inProgress": [
+      {
+        "id": "T-2.1",
+        "title": "Component acquisition & verification",
+        "tasks": [
+          "Procurement + reception of electronic & structural parts.",
+          "Compatibility + availability check.",
+          "Material logistics."
+        ],
+        "deps": "Conceptual validation",
+        "time": "4 days",
+        "margin": "±2 days",
+        "resources": "Suppliers, logistics, QC"
+      },
+      {
+        "id": "T-2.2",
+        "title": "Structural & electronic preparation",
+        "tasks": [
+          "PCBs, structures, connections.",
+          "Physical subsystems organization.",
+          "Power & communication systems."
+        ],
+        "deps": "Component reception",
+        "time": "5 days",
+        "margin": "±2 days",
+        "resources": "Lab tools, assembly equipment"
+      },
+      {
+        "id": "T-2.3",
+        "title": "Modular system assembly",
+        "tasks": [
+          "Progressive physical integration.",
+          "Module-to-module connection.",
+          "Partial internal compatibility verification.",
+          "Initial physical-error correction."
+        ],
+        "deps": "Structural preparation",
+        "time": "1 week",
+        "margin": "±3 days",
+        "resources": "Technical team, soldering, electronic lab"
+      },
+      {
+        "id": "T-2.4",
+        "title": "Initial cloud platform development",
+        "tasks": [
+          "Backend structure implementation.",
+          "Cloud services + databases.",
+          "Device communication channels.",
+          "Preliminary data management."
+        ],
+        "deps": "Cloud architecture",
+        "time": "1 week",
+        "margin": "±4 days",
+        "resources": "Backend dev, cloud infra, software envs"
+      },
+      {
+        "id": "T-2.5",
+        "title": "Initial frontend development",
+        "tasks": [
+          "Data visualization.",
+          "Basic monitoring interfaces.",
+          "Backend integration.",
+          "Real-time view verification."
+        ],
+        "deps": "Backend partially implemented",
+        "time": "1 week",
+        "margin": "±3 days",
+        "resources": "Frontend dev, GUI"
+      },
+      {
+        "id": "T-2.6",
+        "title": "Firmware & communications integration",
+        "tasks": [
+          "Internal & external comms.",
+          "Subsystem control integration.",
+          "Synchronization + data flow verification.",
+          "Initial debugging."
+        ],
+        "deps": "Partial assembly",
+        "time": "1 week",
+        "margin": "±4 days",
+        "resources": "Firmware dev, debugging, test envs"
+      },
+      {
+        "id": "T-2.7",
+        "title": "AI data prep & initial processing",
+        "tasks": [
+          "Organize experimental data.",
+          "Clean and structure data.",
+          "Preliminary datasets.",
+          "Data quality verification."
+        ],
+        "deps": "Comms + cloud operational",
+        "time": "5 days",
+        "margin": "±3 days",
+        "resources": "Data processing, AI pipelines, cloud storage"
+      },
+      {
+        "id": "T-2.8",
+        "title": "Preliminary AI training",
+        "tasks": [
+          "Initial model training.",
+          "Parameter tuning.",
+          "Initial result validation.",
+          "Prediction issue correction."
+        ],
+        "deps": "Datasets ready",
+        "time": "1 week",
+        "margin": "±4 days",
+        "resources": "GPUs, AI tools, processed data"
+      },
+      {
+        "id": "T-2.9",
+        "title": "First global start-up & calibration",
+        "tasks": [
+          "First global activation.",
+          "Initial calibration.",
+          "Sync between HW ↔ cloud ↔ AI.",
+          "Basic functional verification."
+        ],
+        "deps": "Initial physical, cloud, AI integration",
+        "time": "5 days",
+        "margin": "±3 days",
+        "resources": "Measurement tools, lab"
+      }
+    ],
+    "future": [
+      {
+        "id": "T-3.1",
+        "title": "Full HW ↔ cloud ↔ AI integration",
+        "tasks": [
+          "Global data flow verification.",
+          "Full sync validation.",
+          "Remote monitoring integration.",
+          "Real-time response."
+        ],
+        "deps": "Initial calibration",
+        "time": "1 week",
+        "margin": "±4 days",
+        "resources": "Dev team, test envs"
+      },
+      {
+        "id": "T-3.2",
+        "title": "AI model optimization",
+        "tasks": [
+          "Retraining with new data.",
+          "Hyperparameter tuning.",
+          "Accuracy + stability optimization.",
+          "Reduce false positives."
+        ],
+        "deps": "Global integration operational",
+        "time": "1 week",
+        "margin": "±5 days",
+        "resources": "GPUs, additional data, AI tools"
+      },
+      {
+        "id": "T-3.3",
+        "title": "Internal functional tests",
+        "tasks": [
+          "Global performance.",
+          "Stability + robustness.",
+          "Continuous operation.",
+          "Comms + sync."
+        ],
+        "deps": "Global integration finalized",
+        "time": "1 week",
+        "margin": "±3 days",
+        "resources": "Lab, measurement tools"
+      },
+      {
+        "id": "T-3.4",
+        "title": "Safety & compatibility tests",
+        "tasks": [
+          "Electrical safety.",
+          "Thermal + energy.",
+          "Interference + stability.",
+          "Simulation of real operating conditions."
+        ],
+        "deps": "Functional tests complete",
+        "time": "1 week",
+        "margin": "±4 days",
+        "resources": "Labs, measurement equipment"
+      },
+      {
+        "id": "T-3.5",
+        "title": "Iterative correction & final optimization",
+        "tasks": [
+          "Bug fixes.",
+          "Final calibration tuning.",
+          "Global performance optimization.",
+          "Partial revalidation."
+        ],
+        "deps": "Internal + safety tests done",
+        "time": "1 week",
+        "margin": "±3 days",
+        "resources": "Tech team, SW dev, lab"
+      },
+      {
+        "id": "T-3.6",
+        "title": "Clinical validation preparation",
+        "tasks": [
+          "Documental + experimental protocols.",
+          "Coordination with hospitals / residencies.",
+          "Test procedure definition.",
+          "Deployment logistics."
+        ],
+        "deps": "Experimental validation complete",
+        "time": "4 days",
+        "margin": "±2 days",
+        "resources": "Technical docs, clinical coordination"
+      },
+      {
+        "id": "T-3.7",
+        "title": "Pilot validation in hospital / residency",
+        "tasks": [
+          "Install in real environment.",
+          "Initial supervision.",
+          "Collect experimental data.",
+          "Preliminary clinical validation."
+        ],
+        "deps": "Clinical preparation complete",
+        "time": "Start within next 3 months",
+        "margin": "±2 weeks",
+        "resources": "Technical support, clinical coordination, hospital/residency"
+      }
+    ]
+  },
+
+  "regulatory": {
+    "department": "regulatory",
+    "done": [
+      {
+        "id": "R-1.1",
+        "title": "Initial regulatory & clinical analysis",
+        "tasks": [
+          "Preliminary regulatory needs identification.",
+          "Clinical use of both prototypes (drainage flow + IV flowmeter).",
+          "Clinical + operational risk identification.",
+          "Safety, traceability, data protection initial review.",
+          "Possible clinical validation environments."
+        ],
+        "deps": "Initial product definition + clinical need",
+        "time": "1 week",
+        "margin": "±3 days",
+        "resources": "Bibliographic review, regulation, clinical docs"
+      },
+      {
+        "id": "R-1.2",
+        "title": "Preliminary regulation & compliance study",
+        "tasks": [
+          "MDR (EU 2017/745) preliminary review.",
+          "CE marking requirements.",
+          "GDPR for clinical data.",
+          "Cybersecurity + cloud info protection.",
+          "ISO 13485, 14971; IEC 62304; ISO 27001."
+        ],
+        "deps": "Initial clinical analysis",
+        "time": "1 week",
+        "margin": "±4 days",
+        "resources": "EU regulation, ISO/IEC standards, legal review"
+      },
+      {
+        "id": "R-1.3",
+        "title": "Preliminary device classification",
+        "tasks": [
+          "Regulatory classification study.",
+          "Devices identified as possible Class IIa.",
+          "Impact analysis: continuous monitoring, alerts, cloud sync, decision support.",
+          "Preliminary documental review."
+        ],
+        "deps": "Preliminary functional definition",
+        "time": "4 days",
+        "margin": "±2 days",
+        "resources": "MDR regulation, functional analysis"
+      },
+      {
+        "id": "R-1.4",
+        "title": "Preliminary clinical & safety protocols",
+        "tasks": [
+          "Conceptual protocols for clinical validation.",
+          "Initial safety + operation criteria.",
+          "Preliminary hospital test protocols.",
+          "Clinical variables to monitor.",
+          "Data protection & cloud access protocols."
+        ],
+        "deps": "Preliminary functional architecture",
+        "time": "5 days",
+        "margin": "±2 days",
+        "resources": "Clinical review, hospital protocols, technical coordination"
+      }
+    ],
+    "inProgress": [
+      {
+        "id": "R-2.1",
+        "title": "Regulatory technical documentation",
+        "tasks": [
+          "Organize HW + SW technical documentation.",
+          "Functional descriptions.",
+          "Preliminary risk + safety docs.",
+          "Structure for future MDR + CE certification."
+        ],
+        "deps": "Partial technical development",
+        "time": "1 week",
+        "margin": "±3 days",
+        "resources": "Technical docs, SW architecture, regulatory review"
+      },
+      {
+        "id": "R-2.2",
+        "title": "Initial risk analysis",
+        "tasks": [
+          "Measurement errors.",
+          "Sensor failure risks.",
+          "Cloud sync errors.",
+          "Incorrect or delayed alerts.",
+          "Preliminary mitigations per ISO 14971."
+        ],
+        "deps": "Partial functional integration",
+        "time": "1 week",
+        "margin": "±4 days",
+        "resources": "Tech teams, functional docs, clinical review"
+      },
+      {
+        "id": "R-2.3",
+        "title": "Clinical validation protocols",
+        "tasks": [
+          "Drainage: manual vs automatic, flow precision, sensor stability, continuity, alerts.",
+          "IV flowmeter: flow control, blocked detection, precision, cloud sync, real-time alerts."
+        ],
+        "deps": "Partial functional prototype",
+        "time": "1 week",
+        "margin": "±4 days",
+        "resources": "Clinical coordination, hospital protocols, technical support"
+      },
+      {
+        "id": "R-2.4",
+        "title": "Data protection & cybersecurity protocols",
+        "tasks": [
+          "Clinical data flow review.",
+          "Sensitive data + encryption needs.",
+          "Permissions + access.",
+          "Secure cloud storage.",
+          "GDPR + ISO 27001 alignment."
+        ],
+        "deps": "Partial cloud architecture",
+        "time": "5 days",
+        "margin": "±3 days",
+        "resources": "Cloud architecture, GDPR review, SW review"
+      },
+      {
+        "id": "R-2.5",
+        "title": "Coordination with tech & clinical teams",
+        "tasks": [
+          "Regulatory validation of implemented features.",
+          "Clinical ↔ technical requirement check.",
+          "Coordination HW ↔ cloud ↔ AI for regulatory consistency.",
+          "Data traceability.",
+          "Pilot preparation."
+        ],
+        "deps": "Active technical development",
+        "time": "continuous",
+        "margin": "variable",
+        "resources": "Tech meetings, functional docs, hospital coordination"
+      }
+    ],
+    "future": [
+      {
+        "id": "R-3.1",
+        "title": "Full regulatory validation",
+        "tasks": [
+          "HW + cloud + AI compliance review.",
+          "MDR final compliance check.",
+          "Final technical documentation review.",
+          "Clinical + safety protocols validation."
+        ],
+        "deps": "Fully functional system",
+        "time": "1 week",
+        "margin": "±5 days",
+        "resources": "Final docs, regulatory review"
+      },
+      {
+        "id": "R-3.2",
+        "title": "CE marking preparation",
+        "tasks": [
+          "Certification documentation.",
+          "Technical files.",
+          "Safety + risk documentation.",
+          "Notified body coordination."
+        ],
+        "deps": "Functional + clinical validation complete",
+        "time": "2 weeks",
+        "margin": "±1 week",
+        "resources": "Technical docs, MDR compliance, external coordination"
+      },
+      {
+        "id": "R-3.3",
+        "title": "Pilot clinical validation supervision",
+        "tasks": [
+          "Regulatory supervision of clinical pilot.",
+          "Protocol compliance check.",
+          "Safety + incidents monitoring.",
+          "Clinical feedback collection."
+        ],
+        "deps": "Pilot deployment started",
+        "time": "Start within next 3 months",
+        "margin": "±2 weeks",
+        "resources": "Clinical coordination, technical support"
+      },
+      {
+        "id": "R-3.4",
+        "title": "Post-market surveillance preparation",
+        "tasks": [
+          "Post-implementation follow-up protocols.",
+          "Incident notification systems.",
+          "Continuous monitoring mechanisms.",
+          "Continuous regulatory improvement strategy."
+        ],
+        "deps": "Clinical validation + certification complete",
+        "time": "1 week",
+        "margin": "±4 days",
+        "resources": "Regulatory docs, follow-up systems"
+      },
+      {
+        "id": "R-3.5",
+        "title": "Continuous regulatory updates",
+        "tasks": [
+          "Track regulatory changes.",
+          "Update protocols and documentation.",
+          "Continuous SW + cloud compliance review.",
+          "Adapt to future regulatory needs."
+        ],
+        "deps": "System deployed in real environments",
+        "time": "continuous",
+        "margin": "variable",
+        "resources": "Regulatory teams, normative tracking"
+      }
+    ]
+  },
+
+  "finance": {
+    "department": "finance",
+    "done": [
+      {
+        "id": "F-1.1",
+        "title": "Lean financial model definition",
+        "tasks": [
+          "30,000 € objective for year-one trials.",
+          "Hardware locked at 62 € / device.",
+          "Cloud + AI recurring revenue model defined.",
+          "Cloud plans: Trial 490 € / Standard 950 € / Premium 1,750 € / Network ≥ 3,500 € per month.",
+          "AI plans: Insight 250 € / Clinical Assist 650 € / Enterprise from 1,500 € / Home Care 3–7 € per active patient."
+        ],
+        "deps": "Initial business model",
+        "time": "—",
+        "margin": "—",
+        "resources": "CFO, SaaS pricing analysis"
+      }
+    ],
+    "inProgress": [
+      {
+        "id": "F-2.1",
+        "title": "Pre-seed investor narrative",
+        "tasks": [
+          "30 K€ ask packaged for investor conversation.",
+          "Unit economics + ARR projection.",
+          "MRR levers per hospital, device, user, AI module."
+        ],
+        "deps": "Lean financial model",
+        "time": "ongoing",
+        "margin": "—",
+        "resources": "CFO, CEO, investor decks"
+      }
+    ],
+    "future": [
+      {
+        "id": "F-3.1",
+        "title": "Pre-seed / seed closing",
+        "tasks": [
+          "Investor outreach (this very page).",
+          "Letter of intent + term sheet.",
+          "Closing of first 30 K€ runway.",
+          "Activate hospital pilot purchase orders."
+        ],
+        "deps": "Validated narrative + pilot commitment",
+        "time": "Q3 2026 target",
+        "margin": "—",
+        "resources": "Strategic partners, EMSA grant, hospital LOIs"
+      },
+      {
+        "id": "F-3.2",
+        "title": "Recurring SaaS revenue activation",
+        "tasks": [
+          "Onboard first hospital under Trial Cloud plan.",
+          "MRR tracking + ARR forecast.",
+          "Upsell to Standard / Premium as pilot scales."
+        ],
+        "deps": "Pilot live",
+        "time": "Q4 2026 → Q1 2027",
+        "margin": "—",
+        "resources": "Sales, CFO, customer success"
+      }
+    ]
+  },
+
+  "ops": {
+    "department": "ops",
+    "done": [
+      {
+        "id": "O-1.1",
+        "title": "Master plan & cross-team alignment",
+        "tasks": [
+          "Single-source plan across tech, regulatory, marketing, finance.",
+          "PERT and Gantt diagrams produced (Mermaid).",
+          "Phase ownership per department defined."
+        ],
+        "deps": "Strategic alignment",
+        "time": "—",
+        "margin": "—",
+        "resources": "COO, founders"
+      }
+    ],
+    "inProgress": [
+      {
+        "id": "O-2.1",
+        "title": "Resource orchestration for trials",
+        "tasks": [
+          "EMSA grant for first 5 devices in execution.",
+          "Coordination with Hospital Joan XXIII Tarragona.",
+          "Open HPE Collective managing medical protocols.",
+          "Knock Labs managing market validation campaigns."
+        ],
+        "deps": "Partner commitments",
+        "time": "ongoing",
+        "margin": "—",
+        "resources": "Founders, partners, advisors"
+      }
+    ],
+    "future": [
+      {
+        "id": "O-3.1",
+        "title": "Milestone control & risk management",
+        "tasks": [
+          "Phase-gate review every 4 weeks.",
+          "Risk register update (technical, clinical, regulatory, market).",
+          "Investor reporting cadence."
+        ],
+        "deps": "Pilot active",
+        "time": "From Q3 2026 onward",
+        "margin": "—",
+        "resources": "COO, founders, investor relations"
+      }
+    ]
+  }
+}

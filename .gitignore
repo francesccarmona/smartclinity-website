@@ -33,3 +33,6 @@ npm-debug.log*
 
 # ── Vercel local ──────────────────────────────────────────────
 .vercel/
+
+# ── Local snapshots from the Join Us iteration ────────────────
+_backup_*/
